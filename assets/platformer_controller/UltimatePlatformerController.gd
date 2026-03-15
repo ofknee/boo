@@ -16,7 +16,7 @@ class_name PlatformerController2D
 #INFO HORIZONTAL MOVEMENT 
 @export_category("L/R Movement")
 ##The max speed your player will move
-@export_range(50, 500) var maxSpeed: float = 200.0
+@export_range(50, 500) var maxSpeed: float = 100.0
 ##How fast your player will reach max speed from rest (in seconds)
 @export_range(0, 4) var timeToReachMaxSpeed: float = 0.2
 ##How fast your player will reach zero speed from max speed (in seconds)
@@ -29,9 +29,9 @@ class_name PlatformerController2D
 #INFO JUMPING 
 @export_category("Jumping and Gravity")
 ##The peak height of your player's jump
-@export_range(0, 20) var jumpHeight: float = 2.0
+@export_range(0, 20) var jumpHeight: float = 1.2
 ##How many jumps your character can do before needing to touch the ground again. Giving more than 1 jump disables jump buffering and coyote time.
-@export_range(0, 4) var jumps: int = 1
+@export_range(0, 4) var jumps: int = 2
 ##The strength at which your character will be pulled to the ground.
 @export_range(0, 100) var gravityScale: float = 20.0
 ##The fastest your player can fall
@@ -39,7 +39,7 @@ class_name PlatformerController2D
 ##Your player will move this amount faster when falling providing a less floaty jump curve.
 @export_range(0.5, 3) var descendingGravityFactor: float = 1.3
 ##Enabling this toggle makes it so that when the player releases the jump key while still ascending, their vertical velocity will cut in half, providing variable jump height.
-@export var shortHopAkaVariableJumpHeight: bool = true
+@export var shortHopAkaVariableJumpHeight: bool = false
 ##How much extra time (in seconds) your player will be given to jump after falling off an edge. This is set to 0.2 seconds by default.
 @export_range(0, 0.5) var coyoteTime: float = 0.2
 ##The window of time (in seconds) that your player can press the jump button before hitting the ground and still have their input registered as a jump. This is set to 0.2 seconds by default.
