@@ -508,7 +508,31 @@ func _physics_process(delta):
 			_wallJump()
 			
 			
-	#INFO dashing
+	_handle_dashing()
+	
+	#INFO Corner Cutting
+	if cornerCutting:
+		if velocity.y < 0 and leftRaycast.is_colliding() and !rightRaycast.is_colliding() and !middleRaycast.is_colliding():
+			position.x += correctionAmount
+		if velocity.y < 0 and !leftRaycast.is_colliding() and rightRaycast.is_colliding() and !middleRaycast.is_colliding():
+			position.x -= correctionAmount
+			
+	#INFO Ground Pound
+	if groundPound and downTap and !is_on_floor() and !is_on_wall():
+		groundPounding = true
+		gravityActive = false
+		velocity.y = 0
+		await get_tree().create_timer(groundPoundPause).timeout
+		_groundPound()
+	if is_on_floor() and groundPounding:
+		_endGroundPound()
+	move_and_slide()
+	
+	if upToCancel and upHold and groundPound:
+		_endGroundPound()
+
+#INFO dashing
+func _handle_dashing():
 	if is_on_floor():
 		dashCount = dashes
 	if eightWayDash and dashTap and dashCount > 0 and !rolling:
@@ -565,28 +589,7 @@ func _physics_process(delta):
 		velocity.x = 0
 	if dashing and velocity.x < 0 and rightTap and dashCancel:
 		velocity.x = 0
-	
-	#INFO Corner Cutting
-	if cornerCutting:
-		if velocity.y < 0 and leftRaycast.is_colliding() and !rightRaycast.is_colliding() and !middleRaycast.is_colliding():
-			position.x += correctionAmount
-		if velocity.y < 0 and !leftRaycast.is_colliding() and rightRaycast.is_colliding() and !middleRaycast.is_colliding():
-			position.x -= correctionAmount
-			
-	#INFO Ground Pound
-	if groundPound and downTap and !is_on_floor() and !is_on_wall():
-		groundPounding = true
-		gravityActive = false
-		velocity.y = 0
-		await get_tree().create_timer(groundPoundPause).timeout
-		_groundPound()
-	if is_on_floor() and groundPounding:
-		_endGroundPound()
-	move_and_slide()
-	
-	if upToCancel and upHold and groundPound:
-		_endGroundPound()
-	
+
 func _bufferJump():
 	await get_tree().create_timer(jumpBuffering).timeout
 	jumpWasPressed = false
