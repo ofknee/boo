@@ -1,10 +1,17 @@
 [gd_scene format=3 uid="uid://155xx7s6y6ta"]
 
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://scenes/player.tscn" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="2_jyhfs"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_tbgi4"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_tefeu"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://assets/icon.svg" id="5_tbgi4"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0wfyh"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_sugp2"]
+
+[sub_resource type="Resource" id="Resource_o6xl0"]
+script = ExtResource("3_tbgi4")
 
 [node name="Main" type="Node2D" unique_id=1693393482]
 
@@ -21,3 +28,37 @@ shape = SubResource("WorldBoundaryShape2D_sugp2")
 offset_left = -5000.0
 offset_right = 5000.0
 offset_bottom = 40.0
+
+[node name="PhantomCamera2D" type="Node2D" parent="." unique_id=189817114 node_paths=PackedStringArray("follow_target")]
+top_level = true
+script = ExtResource("2_jyhfs")
+follow_mode = 5
+follow_target = NodePath("../Player")
+tween_resource = SubResource("Resource_o6xl0")
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=86134812]
+physics_interpolation_mode = 1
+top_level = true
+
+[node name="PhantomCameraHost" type="Node" parent="Camera2D" unique_id=1353048507]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("4_tefeu")
+metadata/_custom_type_script = "uid://bd046eokvcnu2"
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=426063908]
+position = Vector2(-120, 191)
+texture = ExtResource("5_tbgi4")
+
+[node name="Icon2" type="Sprite2D" parent="." unique_id=521075208]
+position = Vector2(422, -217)
+texture = ExtResource("5_tbgi4")
+
+[node name="Icon3" type="Sprite2D" parent="." unique_id=1026453450]
+position = Vector2(-534, -317)
+texture = ExtResource("5_tbgi4")
+
+[node name="Icon4" type="Sprite2D" parent="." unique_id=1838340047]
+position = Vector2(-70, -265)
+texture = ExtResource("5_tbgi4")

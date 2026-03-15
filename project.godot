@@ -18,10 +18,11 @@ config/icon="res://assets/icon.svg"
 [autoload]
 
 Global="*uid://cem1tbfmasg46"
+PhantomCameraManager="*uid://duq6jhf6unyis"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg", "res://addons/godot_super-wakatime/plugin.cfg")
+enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg", "res://addons/godot_super-wakatime/plugin.cfg", "res://addons/phantom_camera/plugin.cfg")
 
 [input]
 
