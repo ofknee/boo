@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Boo"
-run/main_scene="uid://155xx7s6y6ta"
+run/main_scene="uid://2yvq6yiiep7y"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://assets/icon.svg"
 
@@ -19,6 +19,13 @@ config/icon="res://assets/icon.svg"
 
 Global="*uid://cem1tbfmasg46"
 PhantomCameraManager="*uid://duq6jhf6unyis"
+
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=360
+window/stretch/mode="viewport"
+window/stretch/scale_mode="integer"
 
 [editor_plugins]
 
@@ -64,6 +71,10 @@ down={
 ]
 }
 
+[layer_names]
+
+2d_render/layer_2="Player"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
@@ -74,3 +85,4 @@ textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.07058824, 0.07450981, 0.12156863, 1)

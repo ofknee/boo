@@ -14,6 +14,8 @@ func _randomize_speed():
 
 func _ready() -> void:
 	par = get_parent() as Control
+	await par.resized
+	await get_tree().process_frame
 	await get_tree().process_frame
 	og_gl_pos = par.global_position
 	og_pos = par.position

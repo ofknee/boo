@@ -9,6 +9,7 @@ var t : Tween
 
 func _ready() -> void:
 	for button in buttons:
+		if not button: continue
 		button.pressed.connect(_on_but_pressed.bind(button.name))
 	tweenables = MenuBase.get_all_tweenables(self)
 	start_anim()
@@ -33,8 +34,7 @@ func _on_but_pressed(button_name:String):
 	print("Button pressed, name is: %s" % button_name)
 	match button_name.to_lower():
 		"play":
-			#get_tree().change_scene_to_packed(SELECT_MENU)
-			pass
+			Global.go_to_main()
 		"settings":
 			pass
 		"explanation":
