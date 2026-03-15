@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://x5y3ive16px2"]
+[gd_scene format=3 uid="uid://d2tl7o083dibn"]
 
-[ext_resource type="Script" uid="uid://487nrwrcapkv" path="res://scenes/checkpoint.gd" id="1_ywqth"]
+[ext_resource type="Script" path="res://scenes/checkpoint.gd" id="1_ywqth"]
 [ext_resource type="Texture2D" uid="uid://dx6bg1rahoxob" path="res://assets/tileset/checkpoint-sheet.png" id="1_yyywg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ywqth"]
@@ -44,13 +44,17 @@ size = Vector2(8, 15)
 
 [sub_resource type="Environment" id="Environment_55jpe"]
 background_mode = 3
+background_energy_multiplier = 0.5
 ambient_light_source = 1
 reflected_light_source = 1
 glow_enabled = true
-glow_intensity = 2.5
-glow_bloom = 0.2
-glow_hdr_threshold = 0.21
+glow_intensity = 4.2
+glow_bloom = 0.03
+glow_hdr_threshold = 0.38
+glow_hdr_scale = 1.15
+glow_hdr_luminance_cap = 10.64
 fog_enabled = true
+fog_light_color = Color(0.5328334, 0.5405087, 0.6473749, 1)
 fog_light_energy = 4.87
 
 [node name="Checkpoint" type="Node2D" unique_id=701151311 node_paths=PackedStringArray("n_sprite", "n_area")]
@@ -62,6 +66,7 @@ dur = 0.3
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1251258714]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_xam77")
+autoplay = "default"
 frame_progress = 0.09410439
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2084787737]

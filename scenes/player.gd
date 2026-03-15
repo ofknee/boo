@@ -5,7 +5,7 @@ class_name Player
 @export var n_flashlight_pivot : Node2D
 @export var n_flashlight : PointLight2D
 @export var flashlight_on := true
-var can_dash := false
+var can_dash := true
 
 # Movement is done by parent, code here is for logic like attacking and stuff
 func _ready():
