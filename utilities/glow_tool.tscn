@@ -1,7 +1,0 @@
-[gd_scene format=3 uid="uid://vsbu3syyvlsh"]
-
-[ext_resource type="Script" uid="uid://dd3vswvkfbs2j" path="res://utilities/glow_tool.gd" id="1_nr8s7"]
-
-[node name="GlowTool" type="Node" unique_id=1654283833]
-script = ExtResource("1_nr8s7")
-glow_multiplier = 1.0
