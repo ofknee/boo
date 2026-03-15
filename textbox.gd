@@ -2,10 +2,10 @@ extends CanvasLayer
 
 const CHAR_READ_RATE = 0.05
 
-@onready var textbox_container = $textboxc
-@onready var start_symbol = $textboxc/MarginContainer/HBoxContainer/start
-@onready var end_symbol = $textboxc/MarginContainer/HBoxContainer/end
-@onready var label = $textboxc/MarginContainer/HBoxContainer/label
+@onready var textbox_container = $textboxcontainer
+@onready var start_symbol = $textboxcontainer/MarginContainer/HBoxContainer/start
+@onready var end_symbol = $textboxcontainer/MarginContainer/HBoxContainer/end
+@onready var label = $textboxcontainer/MarginContainer/HBoxContainer/label
 
 enum State {
 	READY,
@@ -20,10 +20,7 @@ var tween: Tween
 func _ready():
 	print("Starting state: State.READY")
 	hide_textbox()
-	queue_text("Excuse me wanderer where can I find the bathroom?")
-	queue_text("Why do we not look like the others?")
-	queue_text("Because we are free assets from opengameart!")
-	queue_text("Thanks for watching!")
+	queue_text("Press enter.")
 
 func _process(delta):
 	match current_state:
