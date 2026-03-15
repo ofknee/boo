@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cf3kad6ltpfht"
-path="res://.godot/imported/vegetation.png-21d6fa2c31907695231f9caf5d612035.ctex"
+uid="uid://be5evvxpq1lom"
+path="res://.godot/imported/glow.png-a6023a0a5ffc349264494144edcdcf36.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tileset/vegetation.png"
-dest_files=["res://.godot/imported/vegetation.png-21d6fa2c31907695231f9caf5d612035.ctex"]
+source_file="res://assets/tileset/glow.png"
+dest_files=["res://.godot/imported/glow.png-a6023a0a5ffc349264494144edcdcf36.ctex"]
 
 [params]
 
