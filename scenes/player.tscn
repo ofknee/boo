@@ -26,9 +26,6 @@ animations = [{
 radius = 5.0
 height = 14.0
 
-[sub_resource type="Environment" id="Environment_dqkch"]
-glow_enabled = true
-
 [node name="Player" type="CharacterBody2D" unique_id=245072259 node_paths=PackedStringArray("n_flashlight_pivot", "n_flashlight", "PlayerSprite", "PlayerCollider")]
 script = ExtResource("1_g2els")
 n_flashlight_pivot = NodePath("FlashlightPivot")
@@ -65,6 +62,3 @@ energy = 2.0
 shadow_enabled = true
 texture = ExtResource("4_dqkch")
 texture_scale = 0.7
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1523388366]
-environment = SubResource("Environment_dqkch")

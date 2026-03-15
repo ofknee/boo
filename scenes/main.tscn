@@ -63,9 +63,9 @@ position = Vector2(51, -453)
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=86134812]
 physics_interpolation_mode = 1
 top_level = true
-position = Vector2(127, -125)
-offset = Vector2(-0.77919966, -0.7189243)
-zoom = Vector2(5, 5)
+position = Vector2(51, -468)
+offset = Vector2(0.049057104, 0.021243833)
+zoom = Vector2(2, 2)
 
 [node name="PhantomCameraHost" type="Node" parent="Player/Camera2D" unique_id=1353048507]
 process_priority = 300
@@ -75,11 +75,11 @@ metadata/_custom_type_script = "uid://bd046eokvcnu2"
 
 [node name="PhantomCamera2D" type="Node2D" parent="." unique_id=189817114 node_paths=PackedStringArray("follow_target")]
 top_level = true
-position = Vector2(127, -125)
+position = Vector2(51, -468)
 script = ExtResource("2_jyhfs")
 follow_mode = 5
 follow_target = NodePath("../Player")
-zoom = Vector2(5, 5)
+zoom = Vector2(2, 2)
 tween_resource = SubResource("Resource_o6xl0")
 follow_offset = Vector2(0, -15)
 follow_damping = true

@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bd8cox014lu7v" path="res://assets/tileset/tileset.png" id="1_4xfga"]
 [ext_resource type="Texture2D" uid="uid://sorhg26jg67p" path="res://assets/tileset/outsidemid.png" id="2_gldc4"]
 [ext_resource type="Texture2D" uid="uid://d0hafyimcdthf" path="res://assets/tileset/darkdark.png" id="3_0cso3"]
-[ext_resource type="Texture2D" uid="uid://7m4vcw2pft0f" path="res://assets/tileset/vegetation.png" id="4_0cso3"]
+[ext_resource type="Texture2D" uid="uid://dwaafj784ujo5" path="res://assets/tileset/tileset_glow.png" id="4_2klcf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0cso3"]
 texture = ExtResource("3_0cso3")
@@ -113,7 +113,7 @@ texture = ExtResource("1_4xfga")
 1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_be0no"]
-texture = ExtResource("4_0cso3")
+texture = ExtResource("4_2klcf")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -174,3 +174,5 @@ tile_set = SubResource("TileSet_hrmi8")
 z_index = 1
 tile_map_data = PackedByteArray("AAD3/wkAAwADAAAAAAD3/woAAwADAAEAAAAEAAkAAwADAAAAABAEAAoAAwADAAEAABAHAAQAAwAGAAAAAAD9/wsAAwAEAAAAAAD+/wsAAwAFAAAAAAABAAsAAwAEAAAAAAACAAsAAwAFAAAAAAAHAAUAAwAGAAEAAAD//wsAAwAEAAEAAAAAAAsAAwACAAAAAAD4/w4AAwAAAAAAAAD4/w8AAwAAAAEAAAD9/w8AAwACAAIAAAD5/wcAAwAFAAIAADAEAA8AAwABAAMAAAABAOj/AwAEAAMAAAAEAOX/AwACAAMAAAACAOT/AwACAAMAAAA=")
 tile_set = SubResource("TileSet_hrmi8")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1743389322]
