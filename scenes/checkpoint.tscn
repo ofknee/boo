@@ -3,9 +3,6 @@
 [ext_resource type="Script" path="res://scenes/checkpoint.gd" id="1_ywqth"]
 [ext_resource type="Texture2D" uid="uid://dx6bg1rahoxob" path="res://assets/tileset/checkpoint-sheet.png" id="1_yyywg"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ywqth"]
-size = Vector2(8, 15)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_ywqth"]
 atlas = ExtResource("1_yyywg")
 region = Rect2(0, 0, 16, 16)
@@ -73,7 +70,6 @@ autoplay = "default"
 frame_progress = 0.09410439
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2084787737]
-position = Vector2(0, 8)
 collision_layer = 4
 collision_mask = 2
 
@@ -81,7 +77,5 @@ collision_mask = 2
 position = Vector2(0, -7.5)
 shape = SubResource("RectangleShape2D_ywqth")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1251258714]
-sprite_frames = SubResource("SpriteFrames_xam77")
-autoplay = "default"
-frame_progress = 0.015919926
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1253040504]
+environment = SubResource("Environment_55jpe")

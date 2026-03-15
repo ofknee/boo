@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://d0hafyimcdthf" path="res://assets/tileset/darkdark.png" id="3_oa1go"]
 [ext_resource type="Texture2D" uid="uid://sorhg26jg67p" path="res://assets/tileset/outsidemid.png" id="4_tbmy8"]
 [ext_resource type="Texture2D" uid="uid://bd8cox014lu7v" path="res://assets/tileset/tileset.png" id="5_jk1qb"]
-[ext_resource type="Texture2D" uid="uid://cf3kad6ltpfht" path="res://assets/tileset/vegetation.png" id="6_5dd4i"]
+[ext_resource type="Texture2D" uid="uid://7m4vcw2pft0f" path="res://assets/tileset/vegetation.png" id="6_5dd4i"]
 [ext_resource type="Environment" uid="uid://20n0u3pfuf5u" path="res://assets/blur_environment.tres" id="8_tbmy8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lgwnu"]
@@ -148,7 +148,7 @@ grow_vertical = 2
 mouse_filter = 1
 theme = ExtResource("1_ekxnf")
 script = ExtResource("2_ekxnf")
-buttons = [NodePath("CanvasLayer/VBoxContainer/VBoxContainer/Play"), NodePath("CanvasLayer/VBoxContainer/VBoxContainer/Settings"), NodePath("CanvasLayer/VBoxContainer/VBoxContainer/Credits"), NodePath("CanvasLayer/VBoxContainer/VBoxContainer/Quit")]
+buttons = [NodePath("VBoxContainer/VBoxContainer/Play"), NodePath("VBoxContainer/VBoxContainer/Settings"), NodePath("VBoxContainer/VBoxContainer/Credits"), NodePath("VBoxContainer/VBoxContainer/Quit")]
 
 [node name="bg" type="CanvasLayer" parent="." unique_id=840485894]
 layer = -1
@@ -169,31 +169,25 @@ z_index = 1
 tile_map_data = PackedByteArray("AAD3/wkAAwADAAAAAAD3/woAAwADAAEAAAAEAAkAAwADAAAAABAEAAoAAwADAAEAABAHAAQAAwAGAAAAAAD9/wsAAwAEAAAAAAD+/wsAAwAFAAAAAAABAAsAAwAEAAAAAAACAAsAAwAFAAAAAAAHAAUAAwAGAAEAAAD//wsAAwAEAAEAAAAAAAsAAwACAAAAAAD4/w4AAwAAAAAAAAD4/w8AAwAAAAEAAAD9/w8AAwACAAIAAAD5/wcAAwAFAAIAADAEAA8AAwABAAMAAAAGAPL/AwABAAMAAAA=")
 tile_set = SubResource("TileSet_7b55j")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1133873133]
-environment = ExtResource("8_tbmy8")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=612394411]
-layer = 2
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=542194462]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=542194462]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_ekxnf")
 color = Color(0.4627451, 0.46666667, 0.65882355, 0.2)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=2052454025]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2052454025]
+layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.6
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_ekxnf")
 alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/VBoxContainer" unique_id=1680472446]
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer" unique_id=1680472446]
 layout_mode = 2
 mouse_filter = 1
 bbcode_enabled = true
@@ -204,46 +198,27 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/VBoxContainer/RichTextLabel" unique_id=1255815476]
-modulate = Color(0, 0, 0, 0.36862746)
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 5.0
-offset_top = 5.0
-offset_right = 5.0
-offset_bottom = 5.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-bbcode_enabled = true
-text = "[font_size=70]Noctivigant
-"
-fit_content = true
-scroll_active = false
-horizontal_alignment = 1
-vertical_alignment = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/VBoxContainer" unique_id=1542011359]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer" unique_id=1542011359]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 18
 
-[node name="Play" parent="CanvasLayer/VBoxContainer/VBoxContainer" unique_id=478910830 instance=ExtResource("3_bqqt6")]
+[node name="Play" parent="VBoxContainer/VBoxContainer" unique_id=478910830 instance=ExtResource("3_bqqt6")]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.03529412, 0.03529412, 0.05882353, 1)
 
-[node name="Settings" parent="CanvasLayer/VBoxContainer/VBoxContainer" unique_id=1855338561 instance=ExtResource("3_bqqt6")]
+[node name="Settings" parent="VBoxContainer/VBoxContainer" unique_id=1855338561 instance=ExtResource("3_bqqt6")]
 layout_mode = 2
 title = "Settings"
 
-[node name="Credits" parent="CanvasLayer/VBoxContainer/VBoxContainer" unique_id=2055474105 instance=ExtResource("3_bqqt6")]
+[node name="Credits" parent="VBoxContainer/VBoxContainer" unique_id=2055474105 instance=ExtResource("3_bqqt6")]
 layout_mode = 2
 title = "Credits"
 
-[node name="Quit" parent="CanvasLayer/VBoxContainer/VBoxContainer" unique_id=1016746651 instance=ExtResource("3_bqqt6")]
+[node name="Quit" parent="VBoxContainer/VBoxContainer" unique_id=1016746651 instance=ExtResource("3_bqqt6")]
 layout_mode = 2
 title = "Quit"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1133873133]
+environment = ExtResource("8_tbmy8")
