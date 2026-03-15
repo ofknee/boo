@@ -5,9 +5,20 @@
 [ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="2_jyhfs"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_tbgi4"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_tefeu"]
+[ext_resource type="Script" uid="uid://dimvdouy8g0sv" path="res://addons/phantom_camera/scripts/resources/phantom_camera_noise_2d.gd" id="6_tefeu"]
+[ext_resource type="Texture2D" uid="uid://c3rae7jk4p1xu" path="res://assets/images/baked_light.png" id="7_tipki"]
 
 [sub_resource type="Resource" id="Resource_o6xl0"]
 script = ExtResource("3_tbgi4")
+
+[sub_resource type="Resource" id="Resource_tipki"]
+script = ExtResource("6_tefeu")
+amplitude = 4.0
+frequency = 0.1
+metadata/_custom_type_script = "uid://dimvdouy8g0sv"
+
+[sub_resource type="Environment" id="Environment_tipki"]
+glow_enabled = true
 
 [node name="Main" type="Node2D" unique_id=1693393482]
 
@@ -47,7 +58,8 @@ position = Vector2(127, -110)
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=86134812]
 physics_interpolation_mode = 1
 top_level = true
-position = Vector2(127, -110)
+position = Vector2(127, -125)
+offset = Vector2(1.0072362, 1.531831)
 zoom = Vector2(5, 5)
 
 [node name="PhantomCameraHost" type="Node" parent="Player/Camera2D" unique_id=1353048507]
@@ -58,12 +70,26 @@ metadata/_custom_type_script = "uid://bd046eokvcnu2"
 
 [node name="PhantomCamera2D" type="Node2D" parent="." unique_id=189817114 node_paths=PackedStringArray("follow_target")]
 top_level = true
-position = Vector2(127, -110)
+position = Vector2(127, -125)
 script = ExtResource("2_jyhfs")
 follow_mode = 5
 follow_target = NodePath("../Player")
 zoom = Vector2(5, 5)
 tween_resource = SubResource("Resource_o6xl0")
+follow_offset = Vector2(0, -15)
 follow_damping = true
 follow_damping_value = Vector2(0.1, 0.3)
+lookahead_max = true
+noise = SubResource("Resource_tipki")
 metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=393186646]
+environment = SubResource("Environment_tipki")
+
+[node name="TestLight" type="PointLight2D" parent="." unique_id=1933199064]
+visible = false
+position = Vector2(127, -115)
+energy = 1.51
+shadow_enabled = true
+texture = ExtResource("7_tipki")
+texture_scale = 0.1

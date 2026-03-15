@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://wddgu6jaiy0m" path="res://scenes/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://bkq2avknbsxjy" path="res://assets/tileset/slime/slime_f1.png" id="2_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://cf8q7ncbra25l" path="res://assets/tileset/slime/slime_f5.png" id="3_dqkch"]
+[ext_resource type="Texture2D" uid="uid://6sqacl7x07hx" path="res://assets/images/baked_flashlight.png" id="4_dqkch"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_qhqgy"]
+polygon = PackedVector2Array(0, 0, 6, 0, 7, -2, 7, -6, 5, -9, 3, -10, -3, -10, -5, -9, -7, -6, -7, -2, -6, 0)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qhqgy"]
 animations = [{
@@ -18,15 +22,23 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qhqgy"]
-size = Vector2(14, 10)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qhqgy"]
+radius = 5.0
+height = 14.0
 
-[node name="Player" type="CharacterBody2D" unique_id=245072259 node_paths=PackedStringArray("PlayerSprite", "PlayerCollider")]
+[node name="Player" type="CharacterBody2D" unique_id=245072259 node_paths=PackedStringArray("n_flashlight_pivot", "n_flashlight", "PlayerSprite", "PlayerCollider")]
 script = ExtResource("1_g2els")
+n_flashlight_pivot = NodePath("FlashlightPivot")
+n_flashlight = NodePath("FlashlightPivot/Flashlight")
 PlayerSprite = NodePath("Sprite2D")
 PlayerCollider = NodePath("CollisionShape2D")
+jumpBuffering = 0.5
 wallJump = true
 dashType = 1
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=1231884899]
+occluder = SubResource("OccluderPolygon2D_qhqgy")
+occluder_light_mask = 2
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1548080222]
 position = Vector2(0, -11)
@@ -36,4 +48,17 @@ autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1037536881]
 position = Vector2(0, -5)
-shape = SubResource("RectangleShape2D_qhqgy")
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_qhqgy")
+
+[node name="FlashlightPivot" type="Node2D" parent="." unique_id=1419643351]
+position = Vector2(0, -3)
+
+[node name="Flashlight" type="PointLight2D" parent="FlashlightPivot" unique_id=1084769742]
+position = Vector2(8.5, 0)
+energy = 6.35
+shadow_enabled = true
+texture = ExtResource("4_dqkch")
+texture_scale = 0.7
+
+[node name="Marker2D" type="Marker2D" parent="FlashlightPivot/Flashlight" unique_id=1712266251]

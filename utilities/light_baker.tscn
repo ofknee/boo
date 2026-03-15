@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://dbf5labij35s0"]
+
+[ext_resource type="Script" uid="uid://cx8xojptudjgp" path="res://utilities/light_baker.gd" id="1_0j1e0"]
+[ext_resource type="Shader" uid="uid://c32000htoa05r" path="res://shaders/light_baker.gdshader" id="1_76vlk"]
+
+[sub_resource type="World3D" id="World3D_nxtvo"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0j1e0"]
+shader = ExtResource("1_76vlk")
+shader_parameter/light_color = Color(1, 1, 1, 1)
+shader_parameter/radius = 0.50000002375
+shader_parameter/falloff = 1.20000005374012
+shader_parameter/softness = 0.550000026125
+shader_parameter/cone_enabled = true
+shader_parameter/cone_angle = 20.00000095
+shader_parameter/cone_softness = 0.02000000095
+
+[node name="LightBaker" type="Node" unique_id=632804407]
+script = ExtResource("1_0j1e0")
+save_path = "res://assets/images/baked_flashlight.png"
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=965710992]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1679752377]
+world_3d = SubResource("World3D_nxtvo")
+handle_input_locally = false
+size = Vector2i(128, 128)
+render_target_update_mode = 4
+
+[node name="ColorRect" type="ColorRect" parent="SubViewportContainer/SubViewport" unique_id=459275660]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Sprite2D" type="ColorRect" parent="SubViewportContainer/SubViewport" unique_id=527250487]
+material = SubResource("ShaderMaterial_0j1e0")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
