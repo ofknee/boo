@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c61me0ll25lvu"]
+
+[ext_resource type="Texture2D" uid="uid://bn7rae1lgxp6y" path="res://assets/tileset/sign.png" id="1_shbub"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kd50q"]
+size = Vector2(12, 13.5)
+
+[node name="sign" type="Area2D" unique_id=1207559189]
+
+[node name="Sign" type="Sprite2D" parent="." unique_id=239858434]
+texture = ExtResource("1_shbub")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2015163423]
+position = Vector2(0, 1.75)
+shape = SubResource("RectangleShape2D_kd50q")
