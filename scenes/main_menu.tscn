@@ -14,7 +14,7 @@ grow_vertical = 2
 mouse_filter = 1
 theme = ExtResource("1_ekxnf")
 script = ExtResource("2_ekxnf")
-buttons = [NodePath("VBoxContainer/VBoxContainer/Play"), NodePath("VBoxContainer/VBoxContainer/Settings"), NodePath("VBoxContainer/VBoxContainer/Explanation"), NodePath("VBoxContainer/VBoxContainer/Quit")]
+buttons = [NodePath("VBoxContainer/VBoxContainer/Play")]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2052454025]
 layout_mode = 1
@@ -40,18 +40,19 @@ vertical_alignment = 2
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_constants/separation = 18
 
 [node name="Play" parent="VBoxContainer/VBoxContainer" unique_id=478910830 instance=ExtResource("3_bqqt6")]
 layout_mode = 2
 
-[node name="Settings" parent="VBoxContainer/VBoxContainer" unique_id=1133606511 instance=ExtResource("3_bqqt6")]
+[node name="Settings" parent="VBoxContainer/VBoxContainer" unique_id=1855338561 instance=ExtResource("3_bqqt6")]
 layout_mode = 2
 title = "Settings"
 
-[node name="Explanation" parent="VBoxContainer/VBoxContainer" unique_id=1322996390 instance=ExtResource("3_bqqt6")]
+[node name="Credits" parent="VBoxContainer/VBoxContainer" unique_id=2055474105 instance=ExtResource("3_bqqt6")]
 layout_mode = 2
-title = "Explanation"
+title = "Credits"
 
-[node name="Quit" parent="VBoxContainer/VBoxContainer" unique_id=280323042 instance=ExtResource("3_bqqt6")]
+[node name="Quit" parent="VBoxContainer/VBoxContainer" unique_id=1016746651 instance=ExtResource("3_bqqt6")]
 layout_mode = 2
 title = "Quit"

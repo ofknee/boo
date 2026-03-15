@@ -2,16 +2,23 @@
 
 [ext_resource type="Theme" uid="uid://bev37guv40f1g" path="res://assets/menu_theme.tres" id="1_n1scp"]
 [ext_resource type="Script" uid="uid://pt501n868qhh" path="res://scenes/button_main.gd" id="2_aaexx"]
-[ext_resource type="Script" uid="uid://d2nfa8mccq7hq" path="res://utilities/ui/tweenable.gd" id="3_tq8og"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aaexx"]
 bg_color = Color(0.16862746, 0.16862746, 0.27450982, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tq8og"]
 bg_color = Color(0.5411765, 0.42745098, 0.60784316, 0.6392157)
-skew = Vector2(1, 0)
+skew = Vector2(0.75, 0)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
-[node name="Play" type="Button" unique_id=478910830 node_paths=PackedStringArray("node_title_label", "node_selector", "node_tweenable")]
+[node name="Play" type="Button" unique_id=478910830 node_paths=PackedStringArray("node_title_label", "node_selector", "node_bg")]
 custom_minimum_size = Vector2(150, 60)
 offset_right = 150.0
 offset_bottom = 60.0
@@ -20,11 +27,10 @@ theme = ExtResource("1_n1scp")
 script = ExtResource("2_aaexx")
 node_title_label = NodePath("Title")
 node_selector = NodePath("Selector")
-node_tweenable = NodePath("Selector/Tweenable")
+node_bg = NodePath("Panel")
 title = "Play"
 
 [node name="Panel" type="Panel" parent="." unique_id=620052841]
-show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -46,12 +52,6 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_tq8og")
 
-[node name="Tweenable" type="Node" parent="Selector" unique_id=1179331628]
-script = ExtResource("3_tq8og")
-dir = Vector2(-1, 0)
-speed = 5.0
-metadata/_custom_type_script = "uid://d2nfa8mccq7hq"
-
 [node name="Title" type="RichTextLabel" parent="." unique_id=1868399533]
 layout_mode = 1
 anchors_preset = 15
@@ -65,3 +65,5 @@ fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
