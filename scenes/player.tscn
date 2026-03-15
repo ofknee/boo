@@ -1,16 +1,33 @@
 [gd_scene format=3 uid="uid://be8qbmt0fe144"]
 
-[ext_resource type="Script" uid="uid://wddgu6jaiy0m" path="res://scenes/player.gd" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://c04l58uvrcf2u" path="res://assets/platformer_controller/UltimatePlatformerController.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://assets/icon.svg" id="2_g2els"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
+atlas = ExtResource("2_g2els")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qhqgy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2els")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qhqgy"]
 radius = 60.0
 
-[node name="Player" type="CharacterBody2D" unique_id=245072259]
-script = ExtResource("1_3vyb7")
+[node name="Player" type="CharacterBody2D" unique_id=245072259 node_paths=PackedStringArray("PlayerSprite", "PlayerCollider")]
+script = ExtResource("1_g2els")
+PlayerSprite = NodePath("Sprite2D")
+PlayerCollider = NodePath("CollisionShape2D")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1498592809]
-texture = ExtResource("2_g2els")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1548080222]
+sprite_frames = SubResource("SpriteFrames_qhqgy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1037536881]
 shape = SubResource("CircleShape2D_qhqgy")
