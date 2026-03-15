@@ -34,8 +34,7 @@ func _on_but_pressed(button_name:String):
 	print("Button pressed, name is: %s" % button_name)
 	match button_name.to_lower():
 		"play":
-			#get_tree().change_scene_to_packed(SELECT_MENU)
-			pass
+			Global.go_to_main()
 		"settings":
 			pass
 		"explanation":

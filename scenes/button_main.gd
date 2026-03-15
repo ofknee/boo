@@ -35,14 +35,13 @@ func _selector_final_pos() -> Vector2:
 	
 
 func _on_pressed() -> void:
-	if t and t.is_running(): t.kill()
 	self.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
-	t = create_tween().set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_OUT).set_parallel(true)
-	t.tween_property(node_title_label, "scale", Vector2.ONE , dur/7.)
-	t.tween_property(node_bg, "scale", Vector2.ONE , dur/7.)
-	t.chain()
-	t.tween_property(node_title_label, "scale", Vector2.ONE * 1.1, dur/7.)
-	t.tween_property(node_bg, "scale", Vector2.ONE * 1.1, dur/7.)
+	var _t : Tween = create_tween().set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_OUT).set_parallel(true)
+	_t.tween_property(node_title_label, "scale", Vector2.ONE , dur/7.)
+	_t.tween_property(node_bg, "scale", Vector2.ONE , dur/7.)
+	_t.chain()
+	_t.tween_property(node_title_label, "scale", Vector2.ONE * 1.1, dur/7.)
+	_t.tween_property(node_bg, "scale", Vector2.ONE * 1.1, dur/7.)
 
 func _notification(what: int) -> void:
 	match what:

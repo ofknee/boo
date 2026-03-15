@@ -15,10 +15,10 @@
 [resource]
 default_font = ExtResource("1_tf8oi")
 default_font_size = 50
-Button/font_sizes/font_size = 20
 Button/styles/disabled = SubResource("StyleBoxEmpty_2f5im")
 Button/styles/focus = SubResource("StyleBoxEmpty_tf8oi")
 Button/styles/hover = SubResource("StyleBoxEmpty_hqjoi")
 Button/styles/normal = SubResource("StyleBoxEmpty_m72v5")
 Button/styles/pressed = SubResource("StyleBoxEmpty_vw0k4")
+RichTextLabel/font_sizes/normal_font_size = 30
 VBoxContainer/constants/separation = 10
