@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://btgc5g36fl76d"]
+
+[ext_resource type="Script" uid="uid://cyfox1tdwryfc" path="res://textbox.gd" id="1_3xmdk"]
+[ext_resource type="FontFile" uid="uid://dim02pntpcer4" path="res://assets/fonts/jersey_15/Jersey15-Regular.ttf" id="2_g5d5p"]
+
+[sub_resource type="Theme" id="Theme_qagdh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c4wvf"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[node name="textbox" type="CanvasLayer" unique_id=849305512]
+script = ExtResource("1_3xmdk")
+
+[node name="textboxcontainer" type="MarginContainer" parent="." unique_id=914646100]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -144.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme = SubResource("Theme_qagdh")
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+metadata/_edit_group_ = true
+
+[node name="Panel" type="Panel" parent="textboxcontainer" unique_id=958772302]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_c4wvf")
+
+[node name="MarginContainer" type="MarginContainer" parent="textboxcontainer" unique_id=1989546936]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="textboxcontainer/MarginContainer" unique_id=1537572811]
+layout_mode = 2
+
+[node name="start" type="Label" parent="textboxcontainer/MarginContainer/HBoxContainer" unique_id=1392325863]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_g5d5p")
+theme_override_font_sizes/font_size = 32
+text = "> "
+
+[node name="label" type="Label" parent="textboxcontainer/MarginContainer/HBoxContainer" unique_id=517991383]
+custom_minimum_size = Vector2(542, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("2_g5d5p")
+theme_override_font_sizes/font_size = 32
+text = "sphinx of black quartz, judge my vow — the five boxing wizards jump quickly"
+autowrap_mode = 3
+
+[node name="end" type="Label" parent="textboxcontainer/MarginContainer/HBoxContainer" unique_id=1891290563]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_g5d5p")
+theme_override_font_sizes/font_size = 32
+text = "v"
