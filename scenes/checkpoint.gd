@@ -20,6 +20,5 @@ func _checkpointed() -> void:
 	t = create_tween().set_trans(Tween.TRANS_SINE).set_loops(2)
 	t.tween_property(n_sprite, "modulate", Color.WHITE * 1.3, dur)
 	t.tween_property(n_sprite, "modulate", Color.WHITE, dur)
-	t.tween_callback(func(): print("Going"))
 	if not Engine.is_editor_hint():
 		CheckpointManager.register_checkpoint(self)
