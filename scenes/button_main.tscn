@@ -4,19 +4,22 @@
 [ext_resource type="Script" uid="uid://pt501n868qhh" path="res://scenes/button_main.gd" id="2_aaexx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aaexx"]
-bg_color = Color(0.5411765, 0.42745098, 0.60784316, 1)
+bg_color = Color(0.16862746, 0.16862746, 0.27450982, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 0.39215687)
+shadow_size = 5
+shadow_offset = Vector2(5, 5)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tq8og"]
 bg_color = Color(0.5411765, 0.42745098, 0.60784316, 0.6392157)
 skew = Vector2(0.75, 0)
 corner_radius_top_left = 3
-corner_radius_top_right = 3
+corner_radius_top_right = 7
 corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
+corner_radius_bottom_left = 7
 
 [node name="Play" type="Button" unique_id=478910830 node_paths=PackedStringArray("node_title_label", "node_selector", "node_bg")]
 custom_minimum_size = Vector2(100, 30)
@@ -44,9 +47,9 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_aaexx")
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.3
-anchor_top = -0.2
+anchor_top = -0.4
 anchor_right = 1.3
-anchor_bottom = 1.2
+anchor_bottom = 1.4
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2

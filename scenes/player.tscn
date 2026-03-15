@@ -26,10 +26,14 @@ animations = [{
 radius = 5.0
 height = 14.0
 
+[sub_resource type="Environment" id="Environment_dqkch"]
+glow_enabled = true
+
 [node name="Player" type="CharacterBody2D" unique_id=245072259 node_paths=PackedStringArray("n_flashlight_pivot", "n_flashlight", "PlayerSprite", "PlayerCollider")]
 script = ExtResource("1_g2els")
 n_flashlight_pivot = NodePath("FlashlightPivot")
 n_flashlight = NodePath("FlashlightPivot/Flashlight")
+flashlight_on = false
 PlayerSprite = NodePath("Sprite2D")
 PlayerCollider = NodePath("CollisionShape2D")
 jumpBuffering = 0.5
@@ -55,10 +59,12 @@ shape = SubResource("CapsuleShape2D_qhqgy")
 position = Vector2(0, -3)
 
 [node name="Flashlight" type="PointLight2D" parent="FlashlightPivot" unique_id=1084769742]
+visible = false
 position = Vector2(8.5, 0)
-energy = 6.35
+energy = 2.0
 shadow_enabled = true
 texture = ExtResource("4_dqkch")
 texture_scale = 0.7
 
-[node name="Marker2D" type="Marker2D" parent="FlashlightPivot/Flashlight" unique_id=1712266251]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1523388366]
+environment = SubResource("Environment_dqkch")

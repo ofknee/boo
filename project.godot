@@ -19,6 +19,7 @@ config/icon="res://assets/icon.svg"
 
 Global="*uid://cem1tbfmasg46"
 PhantomCameraManager="*uid://duq6jhf6unyis"
+CheckpointManager="*uid://dpsim7wewhaqe"
 
 [display]
 
@@ -74,6 +75,8 @@ down={
 [layer_names]
 
 2d_render/layer_2="Player"
+2d_physics/layer_2="Player"
+2d_physics/layer_3="Checkpoints"
 
 [physics]
 
@@ -85,4 +88,5 @@ textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+viewport/hdr_2d=true
 environment/defaults/default_clear_color=Color(0.07058824, 0.07450981, 0.12156863, 1)

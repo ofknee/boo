@@ -20,5 +20,8 @@ func _process(_delta):
 	else:
 		n_flashlight.hide()
 
+func _on_death():
+	CheckpointManager.teleport_player()
+
 func _handle_dashing():
 	if can_dash: super()

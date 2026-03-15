@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://x5y3ive16px2"]
+
+[ext_resource type="Script" uid="uid://487nrwrcapkv" path="res://scenes/checkpoint.gd" id="1_ywqth"]
+[ext_resource type="Texture2D" uid="uid://dx6bg1rahoxob" path="res://assets/tileset/checkpoint-sheet.png" id="1_yyywg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywqth"]
+atlas = ExtResource("1_yyywg")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsimk"]
+atlas = ExtResource("1_yyywg")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqsag"]
+atlas = ExtResource("1_yyywg")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c45tw"]
+atlas = ExtResource("1_yyywg")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xam77"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ywqth")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vsimk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yqsag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c45tw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ywqth"]
+size = Vector2(8, 15)
+
+[sub_resource type="Environment" id="Environment_55jpe"]
+background_mode = 3
+ambient_light_source = 1
+reflected_light_source = 1
+glow_enabled = true
+glow_intensity = 2.5
+glow_bloom = 0.2
+glow_hdr_threshold = 0.21
+fog_enabled = true
+fog_light_energy = 4.87
+
+[node name="Checkpoint" type="Node2D" unique_id=701151311 node_paths=PackedStringArray("n_sprite", "n_area")]
+script = ExtResource("1_ywqth")
+n_sprite = NodePath("AnimatedSprite2D")
+n_area = NodePath("Area2D")
+dur = 0.3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1251258714]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_xam77")
+frame_progress = 0.09410439
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2084787737]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1312428679]
+position = Vector2(0, -7.5)
+shape = SubResource("RectangleShape2D_ywqth")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1253040504]
+environment = SubResource("Environment_55jpe")
