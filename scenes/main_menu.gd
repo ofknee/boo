@@ -3,7 +3,9 @@ class_name MainMenu
 
 
 @export var buttons : Array[Button] = []
+var dur := 1.0
 var tweenables : Array[Tweenable]
+var t : Tween
 
 func _ready() -> void:
 	for button in buttons:
@@ -13,10 +15,18 @@ func _ready() -> void:
 
 
 func start_anim():
-	pass
+	if t and t.is_running(): t.kill()
+	t = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUINT).set_parallel(true)
+	for tweenable in MainMenu.get_all_tweenables(self):
+		tweenable.par.global_position = tweenable.og_gl_pos
+		t.tween_property(tweenable.par, "global_position", tweenable.get_final_global_pos(), dur)
 
 func end_anim():
-	pass
+	if t and t.is_running(): t.kill()
+	t = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUINT).set_parallel(true)
+	for tweenable in MainMenu.get_all_tweenables(self):
+		tweenable.par.global_position = tweenable.get_final_global_pos()
+		t.tween_property(tweenable.par, "global_position", tweenable.og_gl_pos, dur)
 
 
 func _on_but_pressed(button_name:String):

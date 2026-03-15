@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bxmf7jgqsdjod" path="res://scenes/main_menu.gd" id="2_ekxnf"]
 [ext_resource type="PackedScene" uid="uid://ce5oretdgl25u" path="res://scenes/button_main.tscn" id="3_bqqt6"]
 
-[node name="MainMenu" type="Control" unique_id=347685482]
+[node name="MainMenu" type="Control" unique_id=347685482 node_paths=PackedStringArray("buttons")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,6 +14,7 @@ grow_vertical = 2
 mouse_filter = 1
 theme = ExtResource("1_ekxnf")
 script = ExtResource("2_ekxnf")
+buttons = [NodePath("VBoxContainer/VBoxContainer/Play"), NodePath("VBoxContainer/VBoxContainer/Settings"), NodePath("VBoxContainer/VBoxContainer/Explanation"), NodePath("VBoxContainer/VBoxContainer/Quit")]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2052454025]
 layout_mode = 1

@@ -1,6 +1,6 @@
 @tool
 extends Node
-#class_name Tweenable
+class_name Tweenable
 
 @export var dir : Vector2 = Vector2.ZERO
 @export var speed : float = 0

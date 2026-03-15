@@ -1,5 +1,5 @@
 @tool
-class_name Tweenable
+#class_name Tweenable
 extends Node
 
 @export var property: String = "scale"
