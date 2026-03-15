@@ -58,6 +58,15 @@ theme_override_fonts/font = ExtResource("2_tipki")
 theme_override_font_sizes/font_size = 8
 text = "jump into a wall to wall jump"
 
+[node name="Label7" type="Label" parent="map/temp text im lazy" unique_id=2086227651]
+offset_left = 120.0
+offset_top = -462.0
+offset_right = 232.0
+offset_bottom = -439.0
+theme_override_fonts/font = ExtResource("2_tipki")
+theme_override_font_sizes/font_size = 8
+text = "shift to dash"
+
 [node name="signs2" type="Node2D" parent="map" unique_id=1964929912]
 
 [node name="sign" parent="map/signs2" unique_id=1207559189 instance=ExtResource("2_ya4ey")]
@@ -87,7 +96,7 @@ jumpBuffering = 0.2
 physics_interpolation_mode = 1
 top_level = true
 position = Vector2(51, -468)
-offset = Vector2(0.41590524, 0.5164619)
+offset = Vector2(0.31178787, 0.38317192)
 zoom = Vector2(2, 2)
 
 [node name="PhantomCameraHost" type="Node" parent="Player/Camera2D" unique_id=1353048507]
