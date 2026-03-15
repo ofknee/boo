@@ -18,8 +18,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_qhqgy"]
-radius = 7.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qhqgy"]
+size = Vector2(14, 10)
 
 [node name="Player" type="CharacterBody2D" unique_id=245072259 node_paths=PackedStringArray("PlayerSprite", "PlayerCollider")]
 script = ExtResource("1_g2els")
@@ -29,11 +29,11 @@ wallJump = true
 dashType = 1
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1548080222]
-position = Vector2(0, -12.000001)
-scale = Vector2(1.02, 1.02)
+position = Vector2(0, -11)
+scale = Vector2(0.9, 0.9)
 sprite_frames = SubResource("SpriteFrames_qhqgy")
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1037536881]
-position = Vector2(0, -6)
-shape = SubResource("CircleShape2D_qhqgy")
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_qhqgy")
