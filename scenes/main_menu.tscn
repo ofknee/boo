@@ -2,6 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://bev37guv40f1g" path="res://assets/menu_theme.tres" id="1_ekxnf"]
 [ext_resource type="Script" uid="uid://bxmf7jgqsdjod" path="res://scenes/main_menu.gd" id="2_ekxnf"]
+[ext_resource type="PackedScene" uid="uid://ce5oretdgl25u" path="res://scenes/button_main.tscn" id="3_bqqt6"]
 
 [node name="MainMenu" type="Control" unique_id=347685482]
 layout_mode = 3
@@ -10,13 +11,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme = ExtResource("1_ekxnf")
 script = ExtResource("2_ekxnf")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2052454025]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = -1
+anchor_right = 0.6
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -24,8 +26,10 @@ alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer" unique_id=1680472446]
 layout_mode = 2
+mouse_filter = 1
 bbcode_enabled = true
-text = "Bossfighting Game"
+text = "[font_size=100]Noctivigant
+"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1
@@ -36,18 +40,17 @@ custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Play" type="Button" parent="VBoxContainer/VBoxContainer" unique_id=179166408]
+[node name="Play" parent="VBoxContainer/VBoxContainer" unique_id=478910830 instance=ExtResource("3_bqqt6")]
 layout_mode = 2
-text = "Play"
 
-[node name="Settings" type="Button" parent="VBoxContainer/VBoxContainer" unique_id=1479488363]
+[node name="Settings" parent="VBoxContainer/VBoxContainer" unique_id=1133606511 instance=ExtResource("3_bqqt6")]
 layout_mode = 2
-text = "Settings"
+title = "Settings"
 
-[node name="Explanation" type="Button" parent="VBoxContainer/VBoxContainer" unique_id=342936411]
+[node name="Explanation" parent="VBoxContainer/VBoxContainer" unique_id=1322996390 instance=ExtResource("3_bqqt6")]
 layout_mode = 2
-text = "What is this?"
+title = "Explanation"
 
-[node name="Quit" type="Button" parent="VBoxContainer/VBoxContainer" unique_id=1037389047]
+[node name="Quit" parent="VBoxContainer/VBoxContainer" unique_id=280323042 instance=ExtResource("3_bqqt6")]
 layout_mode = 2
-text = "Quit"
+title = "Quit"
