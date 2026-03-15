@@ -24,6 +24,14 @@ theme_override_font_sizes/font_size = 4
 text = "wow u can double jump try it out
 "
 
+[node name="Label4" type="Label" parent="map/temp text im lazy" unique_id=1807298124]
+offset_left = 132.0
+offset_top = -347.0
+offset_right = 230.0
+offset_bottom = -324.0
+theme_override_font_sizes/font_size = 4
+text = "did you know pressing shift lets you dash forward?"
+
 [node name="Label2" type="Label" parent="map/temp text im lazy" unique_id=304371234]
 offset_left = -167.0
 offset_top = 234.0
@@ -42,12 +50,12 @@ text = "wowowowowow keep going
 "
 
 [node name="Player" parent="." unique_id=245072259 instance=ExtResource("1_o5qli")]
-position = Vector2(127, -110)
+position = Vector2(51, -453)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=86134812]
 physics_interpolation_mode = 1
 top_level = true
-position = Vector2(127, -110)
+position = Vector2(51, -453)
 zoom = Vector2(5, 5)
 
 [node name="PhantomCameraHost" type="Node" parent="Player/Camera2D" unique_id=1353048507]
@@ -58,7 +66,7 @@ metadata/_custom_type_script = "uid://bd046eokvcnu2"
 
 [node name="PhantomCamera2D" type="Node2D" parent="." unique_id=189817114 node_paths=PackedStringArray("follow_target")]
 top_level = true
-position = Vector2(127, -110)
+position = Vector2(51, -453)
 script = ExtResource("2_jyhfs")
 follow_mode = 5
 follow_target = NodePath("../Player")
