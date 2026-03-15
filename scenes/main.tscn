@@ -32,6 +32,14 @@ theme_override_font_sizes/font_size = 4
 text = "wow u can double jump try it out
 "
 
+[node name="Label4" type="Label" parent="map/temp text im lazy" unique_id=1807298124]
+offset_left = 132.0
+offset_top = -347.0
+offset_right = 230.0
+offset_bottom = -324.0
+theme_override_font_sizes/font_size = 4
+text = "did you know pressing shift lets you dash forward?"
+
 [node name="Label2" type="Label" parent="map/temp text im lazy" unique_id=304371234]
 offset_left = -167.0
 offset_top = 234.0
@@ -50,7 +58,7 @@ text = "wowowowowow keep going
 "
 
 [node name="Player" parent="." unique_id=245072259 instance=ExtResource("1_o5qli")]
-position = Vector2(127, -110)
+position = Vector2(51, -453)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=86134812]
 physics_interpolation_mode = 1
