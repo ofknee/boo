@@ -15,5 +15,5 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
-		textbox.queue_text("Best turn back now, brave wandered.")
+		textbox.queue_text("Best turn back now, brave wanderer.")
 		textbox.queue_text("The night is perennial and perpetual. The light is but illusory and conceptual.")
