@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://ce5oretdgl25u"]
+
+[ext_resource type="Theme" uid="uid://bev37guv40f1g" path="res://assets/menu_theme.tres" id="1_n1scp"]
+[ext_resource type="Script" uid="uid://pt501n868qhh" path="res://scenes/button_main.gd" id="2_aaexx"]
+
+[node name="Play" type="Button" unique_id=478910830]
+theme = ExtResource("1_n1scp")
+text = "Play"
+script = ExtResource("2_aaexx")
+
+[node name="Title" type="RichTextLabel" parent="." unique_id=1868399533]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1

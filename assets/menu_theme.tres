@@ -1,6 +1,21 @@
 [gd_resource type="Theme" format=3 uid="uid://bev37guv40f1g"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2f5im"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tf8oi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hqjoi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m72v5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vw0k4"]
+
 [resource]
 default_font_size = 40
 Button/font_sizes/font_size = 20
+Button/styles/disabled = SubResource("StyleBoxEmpty_2f5im")
+Button/styles/focus = SubResource("StyleBoxEmpty_tf8oi")
+Button/styles/hover = SubResource("StyleBoxEmpty_hqjoi")
+Button/styles/normal = SubResource("StyleBoxEmpty_m72v5")
+Button/styles/pressed = SubResource("StyleBoxEmpty_vw0k4")
 VBoxContainer/constants/separation = 10
