@@ -3,10 +3,27 @@
 [ext_resource type="Theme" uid="uid://bev37guv40f1g" path="res://assets/menu_theme.tres" id="1_n1scp"]
 [ext_resource type="Script" uid="uid://pt501n868qhh" path="res://scenes/button_main.gd" id="2_aaexx"]
 
-[node name="Play" type="Button" unique_id=478910830]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aaexx"]
+bg_color = Color(0.16862746, 0.16862746, 0.27450982, 1)
+
+[node name="Play" type="Button" unique_id=478910830 node_paths=PackedStringArray("node_title_label")]
+custom_minimum_size = Vector2(150, 60)
+pivot_offset_ratio = Vector2(0.5, 0.5)
 theme = ExtResource("1_n1scp")
-text = "Play"
 script = ExtResource("2_aaexx")
+node_title_label = NodePath("Title")
+title = "Play"
+
+[node name="Panel" type="Panel" parent="." unique_id=620052841]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_aaexx")
 
 [node name="Title" type="RichTextLabel" parent="." unique_id=1868399533]
 layout_mode = 1
@@ -15,6 +32,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+text = "Play"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1

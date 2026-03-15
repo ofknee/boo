@@ -1,12 +1,23 @@
+@tool
 extends Button
 class_name ButtonMain
 @export_subgroup("Nodes", "node_")
-
-@export var title : String = "Title"
+@export var node_title_label : RichTextLabel
+@export var title : String = "Title" :
+	set(v):
+		if title == v: return
+		title = v
+		_update_title()
 var dur := 0.7
 var t : Tween
 
+func _update_title()->void:
+	if node_title_label:
+		node_title_label.text = title
+	self.name = title
+
 func _ready() -> void:
+	_update_title()
 	self.pivot_offset_ratio = Vector2.ONE/2
 
 func _notification(what: int) -> void:

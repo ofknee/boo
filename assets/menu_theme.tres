@@ -1,5 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://bev37guv40f1g"]
 
+[ext_resource type="FontFile" uid="uid://dim02pntpcer4" path="res://assets/fonts/jersey_15/Jersey15-Regular.ttf" id="1_tf8oi"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2f5im"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tf8oi"]
@@ -11,7 +13,8 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vw0k4"]
 
 [resource]
-default_font_size = 40
+default_font = ExtResource("1_tf8oi")
+default_font_size = 50
 Button/font_sizes/font_size = 20
 Button/styles/disabled = SubResource("StyleBoxEmpty_2f5im")
 Button/styles/focus = SubResource("StyleBoxEmpty_tf8oi")

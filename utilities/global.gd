@@ -1,3 +1,3 @@
 extends Node
 
-var player_ref
+var player_ref : Player
