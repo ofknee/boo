@@ -20,7 +20,7 @@ var tween: Tween
 func _ready():
 	print("Starting state: State.READY")
 	hide_textbox()
-	queue_text("Press enter.")
+	queue_text("All I ever wanted was to see the moon.")
 
 func _process(delta):
 	match current_state:

@@ -67,5 +67,5 @@ autowrap_mode = 3
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_fonts/font = ExtResource("2_g5d5p")
-theme_override_font_sizes/font_size = 32
-text = "v"
+theme_override_font_sizes/font_size = 16
+text = "enter"
