@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cyshth2njvvcl"]
+
+[ext_resource type="TileSet" path="res://scenes/copy_tileset.tres" id="1_x4emh"]
+
+[node name="parallax" type="Node2D" unique_id=241111863]
+visible = false
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=965327956]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Parallax2D" unique_id=352205397]
+tile_set = ExtResource("1_x4emh")

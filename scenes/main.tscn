@@ -92,13 +92,14 @@ script = ExtResource("8_jkv2x")
 
 [node name="Player" parent="." unique_id=245072259 instance=ExtResource("1_o5qli")]
 z_index = 5
-position = Vector2(110, -604)
+position = Vector2(169, 172)
 jumpBuffering = 0.2
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=86134812]
 physics_interpolation_mode = 1
-position = Vector2(110, -619)
-offset = Vector2(0.04922052, 0.19420335)
+top_level = true
+position = Vector2(169, 157)
+offset = Vector2(0.15448886, 0.1951553)
 zoom = Vector2(2, 2)
 
 [node name="PhantomCameraHost" type="Node" parent="Player/Camera2D" unique_id=1353048507]
@@ -109,7 +110,7 @@ metadata/_custom_type_script = "uid://bd046eokvcnu2"
 
 [node name="PhantomCamera2D" type="Node2D" parent="." unique_id=189817114 node_paths=PackedStringArray("follow_target")]
 top_level = true
-position = Vector2(110, -619)
+position = Vector2(169, 157)
 script = ExtResource("2_jyhfs")
 follow_mode = 5
 follow_target = NodePath("../Player")
