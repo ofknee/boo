@@ -7,6 +7,7 @@ func register_checkpoint(cp:Checkpoint) -> void:
 	latest_checkpoint = cp
 
 func teleport_player():
+	print("Teleporting player to checkpoint")
 	if latest_checkpoint:
 		Global.player_ref.global_position = latest_checkpoint.global_position
 	else:
