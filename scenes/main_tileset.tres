@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://7m4vcw2pft0f" path="res://assets/tileset/vegetation.png" id="4_gptel"]
 [ext_resource type="PackedScene" uid="uid://n6tpc3kb1nbg" path="res://scenes/spike.tscn" id="5_f6s3l"]
 [ext_resource type="PackedScene" uid="uid://d2tl7o083dibn" path="res://scenes/checkpoint.tscn" id="6_k2k6u"]
-[ext_resource type="PackedScene" path="res://scenes/tall_spike.tscn" id="7_mjpnf"]
+[ext_resource type="PackedScene" uid="uid://ba6hr741piqev" path="res://scenes/tall_spike.tscn" id="7_mjpnf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0cso3"]
 texture = ExtResource("1_ysbcy")
