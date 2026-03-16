@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://w6pa3l0ut66v" path="res://scenes/sign3.gd" id="6_trceg"]
 [ext_resource type="Script" uid="uid://d2d6jfik26ir" path="res://scenes/sign4.gd" id="7_a8y0u"]
 [ext_resource type="Environment" uid="uid://w3cg0isr140p" path="res://assets/game_environment.tres" id="7_o6xl0"]
+[ext_resource type="Script" uid="uid://cb8h8cyoottwm" path="res://scenes/sign5.gd" id="8_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://btgc5g36fl76d" path="res://scenes/textbox.tscn" id="11_trceg"]
 
 [sub_resource type="Resource" id="Resource_o6xl0"]
@@ -86,7 +87,8 @@ position = Vector2(-18, 104)
 script = ExtResource("7_a8y0u")
 
 [node name="sign5" parent="map/signs2" unique_id=1169365262 instance=ExtResource("2_ya4ey")]
-position = Vector2(-18, 104)
+position = Vector2(264, -504)
+script = ExtResource("8_jkv2x")
 
 [node name="Player" parent="." unique_id=245072259 instance=ExtResource("1_o5qli")]
 position = Vector2(51, -453)
@@ -96,7 +98,7 @@ jumpBuffering = 0.2
 physics_interpolation_mode = 1
 top_level = true
 position = Vector2(51, -468)
-offset = Vector2(0.31178787, 0.38317192)
+offset = Vector2(0.33300146, -0.11829336)
 zoom = Vector2(2, 2)
 
 [node name="PhantomCameraHost" type="Node" parent="Player/Camera2D" unique_id=1353048507]
