@@ -36,7 +36,7 @@ func _process(delta):
 				label.visible_ratio = 1.0
 				if tween:
 					tween.kill()
-				end_symbol.text = "v"
+				end_symbol.text = "enter"
 				change_state(State.FINISHED)
 
 		State.FINISHED:
