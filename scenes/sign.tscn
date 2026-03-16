@@ -1,11 +1,16 @@
 [gd_scene format=3 uid="uid://c61me0ll25lvu"]
 
+[ext_resource type="Script" uid="uid://pc4vxx0fbg2y" path="res://utilities/ui/sign.gd" id="1_kd50q"]
 [ext_resource type="Texture2D" uid="uid://bn7rae1lgxp6y" path="res://assets/tileset/sign.png" id="1_shbub"]
+[ext_resource type="Theme" uid="uid://bev37guv40f1g" path="res://assets/menu_theme.tres" id="3_8yyji"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kd50q"]
 size = Vector2(12, 13.5)
 
-[node name="sign" type="Area2D" unique_id=1207559189]
+[node name="sign" type="Area2D" unique_id=2043933743]
+collision_mask = 2
+script = ExtResource("1_kd50q")
+metadata/_custom_type_script = "uid://pc4vxx0fbg2y"
 
 [node name="Sign" type="Sprite2D" parent="." unique_id=239858434]
 texture = ExtResource("1_shbub")
@@ -13,3 +18,17 @@ texture = ExtResource("1_shbub")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2015163423]
 position = Vector2(0, 1.75)
 shape = SubResource("RectangleShape2D_kd50q")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=502789582]
+offset_left = -20.0
+offset_top = -32.0
+offset_right = 20.0
+offset_bottom = 8.0
+theme = ExtResource("3_8yyji")
+theme_override_font_sizes/normal_font_size = 10
+bbcode_enabled = true
+text = "interact"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1

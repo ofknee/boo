@@ -1,6 +1,7 @@
 extends PlatformerController2D
 class_name Player
 
+signal interact
 @export_subgroup("Nodes", "n_")
 @export var n_flashlight_pivot : Node2D
 @export var n_flashlight : PointLight2D
@@ -14,7 +15,11 @@ func _ready():
 	super()
 	Global.player_ref = self
 
+
 func _process(_delta):
+	
+	if Input.is_action_just_pressed("h"):
+		interact.emit()
 	
 	if velocity.x > 0:
 		sprite.flip_h = false
