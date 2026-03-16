@@ -13,6 +13,7 @@ func _ready() -> void:
 
 func _on_body_entered(body:Node2D) -> void:
 	if body is not Player: return
+	$AudioStreamPlayer2D.play()
 	_checkpointed()
 
 func _checkpointed() -> void:

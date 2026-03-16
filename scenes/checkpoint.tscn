@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://d2tl7o083dibn"]
 
-[ext_resource type="Script" path="res://scenes/checkpoint.gd" id="1_ywqth"]
+[ext_resource type="Script" uid="uid://487nrwrcapkv" path="res://scenes/checkpoint.gd" id="1_ywqth"]
 [ext_resource type="Texture2D" uid="uid://dx6bg1rahoxob" path="res://assets/tileset/checkpoint-sheet.png" id="1_yyywg"]
+[ext_resource type="AudioStream" uid="uid://cwingxwyiceoi" path="res://assets/chime.mp3" id="3_vsimk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ywqth"]
 atlas = ExtResource("1_yyywg")
@@ -79,3 +80,7 @@ shape = SubResource("RectangleShape2D_ywqth")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1253040504]
 environment = SubResource("Environment_55jpe")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="." unique_id=698285587]
+stream = ExtResource("3_vsimk")
+volume_db = -8.821
