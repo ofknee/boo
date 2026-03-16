@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://155xx7s6y6ta"]
 
+[ext_resource type="PackedScene" uid="uid://cyshth2njvvcl" path="res://scenes/parallax.tscn" id="1_dp3eg"]
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://scenes/player.tscn" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://df5t4g4tslo0u" path="res://scenes/map.tscn" id="1_tefeu"]
 [ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="2_jyhfs"]
@@ -10,6 +11,7 @@
 [ext_resource type="Script" uid="uid://dimvdouy8g0sv" path="res://addons/phantom_camera/scripts/resources/phantom_camera_noise_2d.gd" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://btgc5g36fl76d" path="res://scenes/textbox.tscn" id="11_trceg"]
 [ext_resource type="AudioStream" uid="uid://tsr8rqu05yhb" path="res://assets/nature-music.mp3" id="16_jbj1t"]
+[ext_resource type="Texture2D" uid="uid://ceud8l8gmofkt" path="res://assets/background (1).png" id="17_muem4"]
 
 [sub_resource type="Resource" id="Resource_o6xl0"]
 script = ExtResource("3_tbgi4")
@@ -21,6 +23,10 @@ frequency = 0.1
 metadata/_custom_type_script = "uid://dimvdouy8g0sv"
 
 [node name="Main" type="Node2D" unique_id=1693393482]
+
+[node name="parallax" parent="." unique_id=241111863 instance=ExtResource("1_dp3eg")]
+z_index = -5
+position = Vector2(-193, -145)
 
 [node name="map" parent="." unique_id=1588884412 instance=ExtResource("1_tefeu")]
 
@@ -86,7 +92,7 @@ scroll_active = false
 texture_filter = 1
 texture_repeat = 1
 offset_left = 120.0
-offset_top = -462.0
+offset_top = -467.0
 offset_right = 232.0
 offset_bottom = -439.0
 theme = ExtResource("2_muem4")
@@ -123,7 +129,7 @@ physics_interpolation_mode = 1
 top_level = true
 texture_filter = 1
 position = Vector2(169, 157)
-offset = Vector2(-1.3794582, -1.3961843)
+offset = Vector2(-0.021012299, -0.32708418)
 zoom = Vector2(2, 2)
 
 [node name="PhantomCameraHost" type="Node" parent="Player/Camera2D" unique_id=1353048507]
@@ -158,6 +164,13 @@ layer = 2
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=898142281]
 stream = ExtResource("16_jbj1t")
 autoplay = true
+
+[node name="endscene" type="CanvasLayer" parent="." unique_id=2113526793]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="endscene" unique_id=1646022712]
+position = Vector2(320, 180)
+texture = ExtResource("17_muem4")
 
 [connection signal="body_entered" from="map/signs2/sign" to="map/signs2/sign" method="_on_body_entered"]
 [connection signal="body_entered" from="map/signs2/sign6" to="map/signs2/sign6" method="_on_body_entered"]

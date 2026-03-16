@@ -69,7 +69,7 @@ func display_text():
 	tween.tween_property(label, "visible_ratio", 1.0, next_text.length() * CHAR_READ_RATE)
 
 	await tween.finished
-	end_symbol.text = "v"
+	end_symbol.text = "enter"
 	change_state(State.FINISHED)
 
 func change_state(next_state):
