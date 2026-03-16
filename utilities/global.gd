@@ -1,6 +1,9 @@
 extends Node
 
-var player_ref : Player
+var player_ref : Player :
+	set(v):
+		player_ref = v
+		CheckpointManager.register_player(v)
 
 const MAIN = preload("res://scenes/main.tscn")
 func go_to_main():
