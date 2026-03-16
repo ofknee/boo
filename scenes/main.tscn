@@ -50,6 +50,15 @@ theme_override_fonts/font = ExtResource("2_tipki")
 theme_override_font_sizes/font_size = 8
 text = "jump x2 perhaps?"
 
+[node name="Label8" type="Label" parent="map/temp text im lazy" unique_id=1189937415]
+offset_left = 100.0
+offset_top = 219.0
+offset_right = 212.0
+offset_bottom = 242.0
+theme_override_fonts/font = ExtResource("2_tipki")
+theme_override_font_sizes/font_size = 8
+text = "H to interact"
+
 [node name="Label6" type="Label" parent="map/temp text im lazy" unique_id=994658452]
 offset_left = -180.0
 offset_top = 276.0
@@ -99,7 +108,7 @@ jumpBuffering = 0.2
 physics_interpolation_mode = 1
 top_level = true
 position = Vector2(169, 157)
-offset = Vector2(0.15448886, 0.1951553)
+offset = Vector2(-1.2100322, -1.7559203)
 zoom = Vector2(2, 2)
 
 [node name="PhantomCameraHost" type="Node" parent="Player/Camera2D" unique_id=1353048507]

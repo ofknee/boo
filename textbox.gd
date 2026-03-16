@@ -21,6 +21,9 @@ func _ready():
 	print("Starting state: State.READY")
 	hide_textbox()
 	queue_text("All I ever wanted was to see the moon.")
+	queue_text("Our ancestors left earth crystals to help you.")
+	queue_text("They shall be your checkpoint. Should you die, you will respawn at your last touched crystal.")
+
 
 func _process(delta):
 	match current_state:
