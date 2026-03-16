@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_tefeu"]
 [ext_resource type="Script" uid="uid://dimvdouy8g0sv" path="res://addons/phantom_camera/scripts/resources/phantom_camera_noise_2d.gd" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://btgc5g36fl76d" path="res://scenes/textbox.tscn" id="11_trceg"]
-[ext_resource type="Script" uid="uid://duj6kuy0ti8sh" path="res://scenes/endscene.gd" id="12_trceg"]
+[ext_resource type="Script" path="res://scenes/endscene.gd" id="12_trceg"]
 [ext_resource type="AudioStream" uid="uid://tsr8rqu05yhb" path="res://assets/nature-music.mp3" id="16_jbj1t"]
 [ext_resource type="Texture2D" uid="uid://ceud8l8gmofkt" path="res://assets/background (1).png" id="17_muem4"]
 
@@ -106,19 +106,17 @@ scroll_active = false
 [node name="signs2" type="Node2D" parent="map" unique_id=1964929912]
 
 [node name="sign" parent="map/signs2" unique_id=1207559189 instance=ExtResource("2_ya4ey")]
+visible = false
 position = Vector2(146, 248)
 
 [node name="sign6" parent="map/signs2" unique_id=2043933743 instance=ExtResource("2_ya4ey")]
 position = Vector2(-150, 248)
-text_arr = Array[String](["They say slimes of the deep evolved the ability to wall hop over the past millenia."])
 
 [node name="sign7" parent="map/signs2" unique_id=1215327514 instance=ExtResource("2_ya4ey")]
 position = Vector2(-18, 104)
-text_arr = Array[String](["The overworld was never made for slimes.", "Death is the only fate that awaits the 'brave' ones.", "Best turn back now, brave wanderer.", "The night is perennial and perpetual. The light is but illusory and conceptual."])
 
 [node name="sign8" parent="map/signs2" unique_id=267149789 instance=ExtResource("2_ya4ey")]
 position = Vector2(264, -504)
-text_arr = Array[String](["Reaching the light always requires work.", "It is best to stay underground. I promise you, the daytime is a myth that only exists in fairy tales."])
 
 [node name="Player" parent="." unique_id=245072259 instance=ExtResource("1_o5qli")]
 z_index = 5
@@ -130,7 +128,7 @@ physics_interpolation_mode = 1
 top_level = true
 texture_filter = 1
 position = Vector2(169, 157)
-offset = Vector2(-0.033076346, -0.18409747)
+offset = Vector2(0.828041, 0.49154472)
 zoom = Vector2(2, 2)
 
 [node name="PhantomCameraHost" type="Node" parent="Player/Camera2D" unique_id=1353048507]

@@ -14,6 +14,6 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.name == "Player":
-		textbox.queue_text("The cave ahead is dangerous.")
-		textbox.queue_text("Only the brave continue.")
+		if body.name == "Player":
+			textbox.queue_text("The cave ahead is dangerous.")
+			textbox.queue_text("Only the brave continue.")
