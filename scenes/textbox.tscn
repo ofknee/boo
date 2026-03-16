@@ -6,11 +6,12 @@
 [sub_resource type="Theme" id="Theme_qagdh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c4wvf"]
-bg_color = Color(0, 0, 0, 1)
+bg_color = Color(0.07058824, 0.07450981, 0.12156863, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
+border_color = Color(0.6509804, 0.5294118, 0.70980394, 1)
 
 [node name="textbox" type="CanvasLayer" unique_id=849305512]
 script = ExtResource("1_3xmdk")
@@ -20,9 +21,13 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -144.0
+offset_left = 20.0
+offset_top = -141.99998
+offset_right = 48.0
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 0
+scale = Vector2(0.9, 0.9)
 size_flags_horizontal = 4
 size_flags_vertical = 3
 theme = SubResource("Theme_qagdh")
@@ -49,6 +54,7 @@ layout_mode = 2
 [node name="start" type="Label" parent="textboxcontainer/MarginContainer/HBoxContainer" unique_id=1392325863]
 layout_mode = 2
 size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.6392157, 0.6392157, 0.9137255, 1)
 theme_override_fonts/font = ExtResource("2_g5d5p")
 theme_override_font_sizes/font_size = 32
 text = "> "
@@ -58,6 +64,7 @@ custom_minimum_size = Vector2(542, 80)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.6392157, 0.6392157, 0.9137255, 1)
 theme_override_fonts/font = ExtResource("2_g5d5p")
 theme_override_font_sizes/font_size = 32
 text = "sphinx of black quartz, judge my vow — the five boxing wizards jump quickly"
@@ -66,6 +73,7 @@ autowrap_mode = 3
 [node name="end" type="Label" parent="textboxcontainer/MarginContainer/HBoxContainer" unique_id=1891290563]
 layout_mode = 2
 size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.6392157, 0.6392157, 0.9137255, 1)
 theme_override_fonts/font = ExtResource("2_g5d5p")
 theme_override_font_sizes/font_size = 16
 text = "enter"

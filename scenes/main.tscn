@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_tefeu"]
 [ext_resource type="Script" uid="uid://dimvdouy8g0sv" path="res://addons/phantom_camera/scripts/resources/phantom_camera_noise_2d.gd" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://btgc5g36fl76d" path="res://scenes/textbox.tscn" id="11_trceg"]
-[ext_resource type="Script" uid="uid://duj6kuy0ti8sh" path="res://scenes/endscene.gd" id="12_trceg"]
+[ext_resource type="Script" path="res://scenes/endscene.gd" id="12_trceg"]
 [ext_resource type="AudioStream" uid="uid://tsr8rqu05yhb" path="res://assets/nature-music.mp3" id="16_jbj1t"]
 [ext_resource type="Texture2D" uid="uid://ceud8l8gmofkt" path="res://assets/background (1).png" id="17_muem4"]
 
@@ -26,6 +26,7 @@ metadata/_custom_type_script = "uid://dimvdouy8g0sv"
 [node name="Main" type="Node2D" unique_id=1693393482]
 
 [node name="parallax" parent="." unique_id=241111863 instance=ExtResource("1_dp3eg")]
+modulate = Color(0.87058824, 0.8235294, 0.9019608, 1)
 z_index = -5
 position = Vector2(-193, -145)
 
@@ -42,6 +43,7 @@ offset_top = 275.0
 offset_right = 215.0
 offset_bottom = 298.0
 theme = ExtResource("2_muem4")
+theme_override_colors/default_color = Color(0.6509804, 0.5294118, 0.70980394, 1)
 theme_override_font_sizes/normal_font_size = 10
 bbcode_enabled = true
 text = "WASD / arrow keys"
@@ -55,6 +57,7 @@ offset_top = 205.0
 offset_right = 128.0
 offset_bottom = 228.0
 theme = ExtResource("2_muem4")
+theme_override_colors/default_color = Color(0.6509804, 0.5294118, 0.70980394, 1)
 theme_override_font_sizes/normal_font_size = 10
 bbcode_enabled = true
 text = "jump x2 perhaps?"
@@ -69,6 +72,7 @@ offset_top = 219.0
 offset_right = 212.0
 offset_bottom = 242.0
 theme = ExtResource("2_muem4")
+theme_override_colors/default_color = Color(0.6509804, 0.5294118, 0.70980394, 1)
 theme_override_font_sizes/normal_font_size = 10
 bbcode_enabled = true
 text = "H to interact"
@@ -83,6 +87,7 @@ offset_top = 276.0
 offset_right = -68.0
 offset_bottom = 299.0
 theme = ExtResource("2_muem4")
+theme_override_colors/default_color = Color(0.6509804, 0.5294118, 0.70980394, 1)
 theme_override_font_sizes/normal_font_size = 10
 bbcode_enabled = true
 text = "jump into a wall to wall jump"
@@ -97,6 +102,7 @@ offset_top = -467.0
 offset_right = 232.0
 offset_bottom = -439.0
 theme = ExtResource("2_muem4")
+theme_override_colors/default_color = Color(0.6509804, 0.5294118, 0.70980394, 1)
 theme_override_font_sizes/normal_font_size = 10
 bbcode_enabled = true
 text = "shift to dash"
@@ -106,6 +112,7 @@ scroll_active = false
 [node name="signs2" type="Node2D" parent="map" unique_id=1964929912]
 
 [node name="sign" parent="map/signs2" unique_id=1207559189 instance=ExtResource("2_ya4ey")]
+visible = false
 position = Vector2(146, 248)
 
 [node name="sign6" parent="map/signs2" unique_id=2043933743 instance=ExtResource("2_ya4ey")]
@@ -130,7 +137,7 @@ physics_interpolation_mode = 1
 top_level = true
 texture_filter = 1
 position = Vector2(169, 157)
-offset = Vector2(-0.033076346, -0.18409747)
+offset = Vector2(-1.0050799, -0.9667621)
 zoom = Vector2(2, 2)
 
 [node name="PhantomCameraHost" type="Node" parent="Player/Camera2D" unique_id=1353048507]
