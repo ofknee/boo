@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://ba6hr741piqev"]
+
+[ext_resource type="Script" uid="uid://idmpl7ls3vui" path="res://scenes/spike.gd" id="1_0hcfk"]
+[ext_resource type="Texture2D" uid="uid://p5j23wayb0c6" path="res://assets/tileset/spikes/spike1.png" id="2_0hcfk"]
+
+[node name="TallSpike" type="Area2D" unique_id=882864458]
+script = ExtResource("1_0hcfk")
+metadata/_custom_type_script = "uid://idmpl7ls3vui"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1489309951]
+position = Vector2(0, 1)
+texture = ExtResource("2_0hcfk")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=261253277]
+polygon = PackedVector2Array(-6, 9, -1, -2, 1, -2, 6, 9)
