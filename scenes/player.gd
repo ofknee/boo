@@ -16,8 +16,9 @@ func _ready():
 	Global.player_ref = self
 
 
-func _process(_delta):
-	
+func _process(delta):
+	if Global.has_ended: return
+	super(delta)
 	if Input.is_action_just_pressed("h"):
 		interact.emit()
 	

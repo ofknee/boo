@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_tefeu"]
 [ext_resource type="Script" uid="uid://dimvdouy8g0sv" path="res://addons/phantom_camera/scripts/resources/phantom_camera_noise_2d.gd" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://btgc5g36fl76d" path="res://scenes/textbox.tscn" id="11_trceg"]
+[ext_resource type="Script" uid="uid://duj6kuy0ti8sh" path="res://scenes/endscene.gd" id="12_trceg"]
 [ext_resource type="AudioStream" uid="uid://tsr8rqu05yhb" path="res://assets/nature-music.mp3" id="16_jbj1t"]
 [ext_resource type="Texture2D" uid="uid://ceud8l8gmofkt" path="res://assets/background (1).png" id="17_muem4"]
 
@@ -129,7 +130,7 @@ physics_interpolation_mode = 1
 top_level = true
 texture_filter = 1
 position = Vector2(169, 157)
-offset = Vector2(-0.021012299, -0.32708418)
+offset = Vector2(0.7341541, 0.93531823)
 zoom = Vector2(2, 2)
 
 [node name="PhantomCameraHost" type="Node" parent="Player/Camera2D" unique_id=1353048507]
@@ -166,7 +167,18 @@ stream = ExtResource("16_jbj1t")
 autoplay = true
 
 [node name="endscene" type="CanvasLayer" parent="." unique_id=2113526793]
+layer = 5
 visible = false
+script = ExtResource("12_trceg")
+
+[node name="ColorRect" type="ColorRect" parent="endscene" unique_id=2042017846]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="endscene" unique_id=1646022712]
 position = Vector2(320, 180)
