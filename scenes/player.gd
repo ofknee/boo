@@ -28,6 +28,8 @@ func _process(_delta):
 	else:
 		n_flashlight.hide()
 
+func kill(): _on_death()
+
 func _on_death():
 	CheckpointManager.teleport_player()
 
