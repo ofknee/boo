@@ -263,6 +263,7 @@ func _process(_delta):
 		anim.scale.x = animScaleLock.x
 	if leftHold and !latched:
 		anim.scale.x = animScaleLock.x * -1
+		
 	
 	#run
 	if run and idle and !dashing and !crouching:
@@ -287,6 +288,7 @@ func _process(_delta):
 	if velocity.y < 0 and jump and !dashing:
 		anim.speed_scale = 1
 		anim.play("jump")
+		print("jump")
 		
 	if velocity.y > 40 and falling and !dashing and !crouching:
 		anim.speed_scale = 1

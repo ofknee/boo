@@ -3,7 +3,9 @@
 [ext_resource type="Script" uid="uid://wddgu6jaiy0m" path="res://scenes/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://bkq2avknbsxjy" path="res://assets/tileset/slime/slime_f1.png" id="2_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://cf8q7ncbra25l" path="res://assets/tileset/slime/slime_f5.png" id="3_dqkch"]
+[ext_resource type="Texture2D" uid="uid://dbk5m3oxycq41" path="res://assets/tileset/slime/slime_f2.png" id="3_tuyoq"]
 [ext_resource type="Texture2D" uid="uid://6sqacl7x07hx" path="res://assets/images/baked_flashlight.png" id="4_dqkch"]
+[ext_resource type="Texture2D" uid="uid://62gdwdpwkxot" path="res://assets/tileset/slime/slime_f4.png" id="4_smehm"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_qhqgy"]
 polygon = PackedVector2Array(0, 0, 6, 0, 7, -2, 7, -6, 5, -9, 3, -10, -3, -10, -5, -9, -7, -6, -7, -2, -6, 0)
@@ -12,14 +14,41 @@ polygon = PackedVector2Array(0, 0, 6, 0, 7, -2, 7, -6, 5, -9, 3, -10, -3, -10, -
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_qhqgy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_dqkch")
+"texture": ExtResource("3_tuyoq")
 }],
 "loop": true,
-"name": &"default",
+"name": &"falling",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_dqkch")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qhqgy")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_tuyoq")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_dqkch")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_smehm")
+}],
+"loop": true,
+"name": &"run",
+"speed": 3.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qhqgy"]
@@ -35,21 +64,26 @@ script = ExtResource("1_g2els")
 n_flashlight_pivot = NodePath("FlashlightPivot")
 n_flashlight = NodePath("FlashlightPivot/Flashlight")
 flashlight_on = false
-PlayerSprite = NodePath("Sprite2D")
+PlayerSprite = NodePath("AnimatedSprite2D")
 PlayerCollider = NodePath("CollisionShape2D")
 jumpBuffering = 0.5
 wallJump = true
 dashType = 1
+run = true
+jump = true
+idle = true
+falling = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=1231884899]
 occluder = SubResource("OccluderPolygon2D_qhqgy")
 occluder_light_mask = 2
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1548080222]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1548080222]
 position = Vector2(0, -11)
 scale = Vector2(0.9, 0.9)
 sprite_frames = SubResource("SpriteFrames_qhqgy")
-autoplay = "default"
+animation = &"falling"
+autoplay = "run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1037536881]
 position = Vector2(0, -5)

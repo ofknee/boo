@@ -8,7 +8,6 @@ signal interact
 @export var flashlight_on := true
 var can_dash := true
 @onready var textbox = get_node("/root/Main/textbox")
-@onready var sprite = $Sprite2D
 
 # Movement is done by parent, code here is for logic like attacking and stuff
 func _ready():
@@ -21,11 +20,7 @@ func _process(delta):
 	super(delta)
 	if Input.is_action_just_pressed("h"):
 		interact.emit()
-	
-	if velocity.x > 0:
-		sprite.flip_h = false
-	elif velocity.x < 0:
-		sprite.flip_h = true
+
 
 	if flashlight_on:
 		var dir = n_flashlight_pivot.get_angle_to(get_global_mouse_position())
