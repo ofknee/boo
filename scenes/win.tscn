@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://yjiqmvv7i3an"]
+
+[ext_resource type="Texture2D" uid="uid://xi5qoxstyh3" path="res://assets/tileset/gem-1-Sheet-fixed.png" id="1_r4oei"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_826fv"]
+atlas = ExtResource("1_r4oei")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iiocm"]
+atlas = ExtResource("1_r4oei")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxbqr"]
+atlas = ExtResource("1_r4oei")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tylv2"]
+atlas = ExtResource("1_r4oei")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vxan"]
+atlas = ExtResource("1_r4oei")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4826q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_826fv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iiocm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yxbqr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tylv2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vxan")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_531e2"]
+
+[node name="win" type="Area2D" unique_id=767027795]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=968178343]
+sprite_frames = SubResource("SpriteFrames_4826q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1381814232]
+shape = SubResource("CircleShape2D_531e2")
