@@ -30,6 +30,7 @@ height = 14.0
 glow_enabled = true
 
 [node name="Player" type="CharacterBody2D" unique_id=245072259 node_paths=PackedStringArray("n_flashlight_pivot", "n_flashlight", "PlayerSprite", "PlayerCollider")]
+collision_layer = 3
 script = ExtResource("1_g2els")
 n_flashlight_pivot = NodePath("FlashlightPivot")
 n_flashlight = NodePath("FlashlightPivot/Flashlight")
