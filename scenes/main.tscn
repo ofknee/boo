@@ -4,17 +4,17 @@
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://scenes/player.tscn" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://df5t4g4tslo0u" path="res://scenes/map.tscn" id="1_tefeu"]
 [ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="2_jyhfs"]
-[ext_resource type="FontFile" uid="uid://dim02pntpcer4" path="res://assets/fonts/jersey_15/Jersey15-Regular.ttf" id="2_tipki"]
+[ext_resource type="Theme" uid="uid://bev37guv40f1g" path="res://assets/menu_theme.tres" id="2_muem4"]
 [ext_resource type="PackedScene" uid="uid://c61me0ll25lvu" path="res://scenes/sign.tscn" id="2_ya4ey"]
-[ext_resource type="Script" uid="uid://b12hxrfrnxaci" path="res://scenes/sign1.gd" id="3_eb6dy"]
+[ext_resource type="Script" path="res://scenes/sign1.gd" id="3_eb6dy"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_tbgi4"]
-[ext_resource type="Script" uid="uid://bnieqt0cseu3u" path="res://scenes/sign2.gd" id="4_eb6dy"]
+[ext_resource type="Script" path="res://scenes/sign2.gd" id="4_eb6dy"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_tefeu"]
 [ext_resource type="Script" uid="uid://dimvdouy8g0sv" path="res://addons/phantom_camera/scripts/resources/phantom_camera_noise_2d.gd" id="6_tefeu"]
-[ext_resource type="Script" uid="uid://w6pa3l0ut66v" path="res://scenes/sign3.gd" id="6_trceg"]
-[ext_resource type="Script" uid="uid://d2d6jfik26ir" path="res://scenes/sign4.gd" id="7_a8y0u"]
+[ext_resource type="Script" path="res://scenes/sign3.gd" id="6_trceg"]
+[ext_resource type="Script" path="res://scenes/sign4.gd" id="7_a8y0u"]
 [ext_resource type="Environment" uid="uid://w3cg0isr140p" path="res://assets/game_environment.tres" id="7_o6xl0"]
-[ext_resource type="Script" uid="uid://cb8h8cyoottwm" path="res://scenes/sign5.gd" id="8_jkv2x"]
+[ext_resource type="Script" path="res://scenes/sign5.gd" id="8_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://btgc5g36fl76d" path="res://scenes/textbox.tscn" id="11_trceg"]
 [ext_resource type="AudioStream" uid="uid://tsr8rqu05yhb" path="res://assets/nature-music.mp3" id="16_jbj1t"]
 [ext_resource type="Texture2D" uid="uid://ceud8l8gmofkt" path="res://assets/background (1).png" id="17_muem4"]
@@ -40,50 +40,74 @@ position = Vector2(-193, -145)
 [node name="temp text im lazy" type="CanvasLayer" parent="map" unique_id=1945547825]
 follow_viewport_enabled = true
 
-[node name="Label" type="Label" parent="map/temp text im lazy" unique_id=186183402]
+[node name="Label" type="RichTextLabel" parent="map/temp text im lazy" unique_id=850375708]
+texture_filter = 1
+texture_repeat = 1
 offset_left = 103.0
 offset_top = 275.0
 offset_right = 215.0
 offset_bottom = 298.0
-theme_override_fonts/font = ExtResource("2_tipki")
-theme_override_font_sizes/font_size = 8
+theme = ExtResource("2_muem4")
+theme_override_font_sizes/normal_font_size = 10
+bbcode_enabled = true
 text = "WASD / arrow keys"
+fit_content = true
+scroll_active = false
 
-[node name="Label5" type="Label" parent="map/temp text im lazy" unique_id=1971608685]
+[node name="Label5" type="RichTextLabel" parent="map/temp text im lazy" unique_id=303144930]
+texture_filter = 1
 offset_left = 16.0
 offset_top = 205.0
 offset_right = 128.0
 offset_bottom = 228.0
-theme_override_fonts/font = ExtResource("2_tipki")
-theme_override_font_sizes/font_size = 8
+theme = ExtResource("2_muem4")
+theme_override_font_sizes/normal_font_size = 10
+bbcode_enabled = true
 text = "jump x2 perhaps?"
+fit_content = true
+scroll_active = false
 
-[node name="Label8" type="Label" parent="map/temp text im lazy" unique_id=1189937415]
+[node name="Label8" type="RichTextLabel" parent="map/temp text im lazy" unique_id=825813198]
+texture_filter = 1
+texture_repeat = 1
 offset_left = 100.0
 offset_top = 219.0
 offset_right = 212.0
 offset_bottom = 242.0
-theme_override_fonts/font = ExtResource("2_tipki")
-theme_override_font_sizes/font_size = 8
+theme = ExtResource("2_muem4")
+theme_override_font_sizes/normal_font_size = 10
+bbcode_enabled = true
 text = "H to interact"
+fit_content = true
+scroll_active = false
 
-[node name="Label6" type="Label" parent="map/temp text im lazy" unique_id=994658452]
+[node name="Label6" type="RichTextLabel" parent="map/temp text im lazy" unique_id=1072869420]
+texture_filter = 1
+texture_repeat = 1
 offset_left = -180.0
 offset_top = 276.0
 offset_right = -68.0
 offset_bottom = 299.0
-theme_override_fonts/font = ExtResource("2_tipki")
-theme_override_font_sizes/font_size = 8
+theme = ExtResource("2_muem4")
+theme_override_font_sizes/normal_font_size = 10
+bbcode_enabled = true
 text = "jump into a wall to wall jump"
+fit_content = true
+scroll_active = false
 
-[node name="Label7" type="Label" parent="map/temp text im lazy" unique_id=2086227651]
+[node name="Label7" type="RichTextLabel" parent="map/temp text im lazy" unique_id=1272233665]
+texture_filter = 1
+texture_repeat = 1
 offset_left = 120.0
 offset_top = -467.0
 offset_right = 232.0
-offset_bottom = -444.0
-theme_override_fonts/font = ExtResource("2_tipki")
-theme_override_font_sizes/font_size = 8
+offset_bottom = -439.0
+theme = ExtResource("2_muem4")
+theme_override_font_sizes/normal_font_size = 10
+bbcode_enabled = true
 text = "shift to dash"
+fit_content = true
+scroll_active = false
 
 [node name="signs2" type="Node2D" parent="map" unique_id=1964929912]
 
@@ -115,8 +139,9 @@ jumpBuffering = 0.2
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=86134812]
 physics_interpolation_mode = 1
 top_level = true
+texture_filter = 1
 position = Vector2(169, 157)
-offset = Vector2(0.85661846, 1.1269691)
+offset = Vector2(0.35184866, -0.221002)
 zoom = Vector2(2, 2)
 
 [node name="PhantomCameraHost" type="Node" parent="Player/Camera2D" unique_id=1353048507]
