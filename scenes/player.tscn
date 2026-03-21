@@ -6,9 +6,18 @@
 [ext_resource type="Texture2D" uid="uid://dbk5m3oxycq41" path="res://assets/tileset/slime/slime_f2.png" id="3_tuyoq"]
 [ext_resource type="Texture2D" uid="uid://6sqacl7x07hx" path="res://assets/images/baked_flashlight.png" id="4_dqkch"]
 [ext_resource type="Texture2D" uid="uid://62gdwdpwkxot" path="res://assets/tileset/slime/slime_f4.png" id="4_smehm"]
+[ext_resource type="Texture2D" uid="uid://dbj5ro35efh20" path="res://assets/tileset/slime/slime_f4-Sheet.png" id="6_fjrip"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_qhqgy"]
 polygon = PackedVector2Array(0, 0, 6, 0, 7, -2, 7, -6, 5, -9, 3, -10, -3, -10, -5, -9, -7, -6, -7, -2, -6, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smehm"]
+atlas = ExtResource("6_fjrip")
+region = Rect2(0, 0, 25, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur7pv"]
+atlas = ExtResource("6_fjrip")
+region = Rect2(25, 0, 25, 25)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qhqgy"]
 animations = [{
@@ -49,6 +58,17 @@ animations = [{
 "loop": true,
 "name": &"run",
 "speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smehm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ur7pv")
+}],
+"loop": true,
+"name": &"slide",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qhqgy"]
@@ -67,7 +87,6 @@ flashlight_on = false
 PlayerSprite = NodePath("AnimatedSprite2D")
 PlayerCollider = NodePath("CollisionShape2D")
 jumpBuffering = 0.5
-wallJump = true
 dashType = 1
 run = true
 jump = true
@@ -82,8 +101,7 @@ occluder_light_mask = 2
 position = Vector2(0, -11)
 scale = Vector2(0.9, 0.9)
 sprite_frames = SubResource("SpriteFrames_qhqgy")
-animation = &"falling"
-autoplay = "run"
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1037536881]
 position = Vector2(0, -5)

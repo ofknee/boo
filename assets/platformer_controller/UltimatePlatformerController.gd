@@ -48,13 +48,13 @@ class_name PlatformerController2D
 #INFO EXTRAS
 @export_category("Wall Jumping")
 ##Allows your player to jump off of walls. Without a Wall Kick Angle, the player will be able to scale the wall.
-@export var wallJump: bool = false
+@export var wallJump: bool = true
 ##How long the player's movement input will be ignored after wall jumping.
-@export_range(0, 0.5) var inputPauseAfterWallJump: float = 0.1
+@export_range(0, 0.5) var inputPauseAfterWallJump: float = 0.15
 ##The angle at which your player will jump away from the wall. 0 is straight away from the wall, 90 is straight up. Does not account for gravity
-@export_range(0, 90) var wallKickAngle: float = 60.0
+@export_range(0, 90) var wallKickAngle: float = 50.0
 ##The player's gravity will be divided by this number when touch a wall and descending. Set to 1 by default meaning no change will be made to the gravity and there is effectively no wall sliding. THIS IS OVERRIDDED BY WALL LATCH.
-@export_range(1, 20) var wallSliding: float = 1.0
+@export_range(1, 20) var wallSliding: float = 10.0
 ##If enabled, the player's gravity will be set to 0 when touching a wall and descending. THIS WILL OVERRIDE WALLSLIDING.
 @export var wallLatching: bool = false
 ##wall latching must be enabled for this to work. #If enabled, the player must hold down the "latch" key to wall latch. Assign "latch" in the project input settings. The player's input will be ignored when latching.
@@ -179,6 +179,10 @@ var rollTap
 var downTap
 var twirlTap
 
+
+var canMove: bool = true
+
+
 func _ready():
 	wasMovingR = true
 	anim = PlayerSprite
@@ -294,14 +298,23 @@ func _process(_delta):
 		anim.speed_scale = 1
 		anim.play("falling")
 		
-	if latch and slide:
-		#wall slide and latch
-		if latched and !wasLatched:
-			anim.speed_scale = 1
-			anim.play("latch")
-		if is_on_wall() and velocity.y > 0 and slide and anim.animation != "slide" and wallSliding != 1:
-			anim.speed_scale = 1
-			anim.play("slide")
+	# wall slide
+# wall slide
+	if is_on_wall() and velocity.y > 0:
+		var normal = get_wall_normal()
+		
+		if normal.x > 0:
+			anim.scale.x = animScaleLock.x
+		elif normal.x < 0:
+			anim.scale.x = -animScaleLock.x
+	
+		anim.play("slide")
+		if !is_on_wall():
+			anim.play("jump")
+
+	# latch
+	if latched and latch:
+		anim.play("latch")
 			
 		#dash
 		if dashing:
@@ -354,7 +367,7 @@ func _physics_process(delta):
 			_decelerate(delta, false)
 		else:
 			velocity.x = -0.1
-	elif rightHold and movementInputMonitoring.x:
+	elif  rightHold and canMove:
 		if velocity.x > maxSpeed or instantAccel:
 			velocity.x = maxSpeed
 		else:
@@ -364,7 +377,7 @@ func _physics_process(delta):
 				_decelerate(delta, false)
 			else:
 				velocity.x = -0.1
-	elif leftHold and movementInputMonitoring.y:
+	elif leftHold and canMove:
 		if velocity.x < -maxSpeed or instantAccel:
 			velocity.x = -maxSpeed
 		else:
@@ -609,6 +622,8 @@ func _jump():
 		jumpWasPressed = false
 		
 func _wallJump():
+	canMove = false
+	_inputPauseReset(inputPauseAfterWallJump)
 	var horizontalWallKick = abs(jumpMagnitude * cos(wallKickAngle * (PI / 180)))
 	var verticalWallKick = abs(jumpMagnitude * sin(wallKickAngle * (PI / 180)))
 	velocity.y = -verticalWallKick
@@ -629,7 +644,7 @@ func _setLatch(delay, setBool):
 			
 func _inputPauseReset(time):
 	await get_tree().create_timer(time).timeout
-	movementInputMonitoring = Vector2(true, true)
+	canMove = true
 	
 
 func _decelerate(delta, vertical):

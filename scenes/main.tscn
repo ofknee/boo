@@ -26,16 +26,15 @@ metadata/_custom_type_script = "uid://dimvdouy8g0sv"
 [node name="Main" type="Node2D" unique_id=1693393482]
 
 [node name="parallax" parent="." unique_id=241111863 instance=ExtResource("1_dp3eg")]
-modulate = Color(0.87058824, 0.8235294, 0.9019608, 1)
 z_index = -5
 position = Vector2(-193, -145)
 
 [node name="map" parent="." unique_id=1588884412 instance=ExtResource("1_tefeu")]
+z_index = -2
 
-[node name="temp text im lazy" type="CanvasLayer" parent="map" unique_id=1945547825]
-follow_viewport_enabled = true
-
-[node name="Label" type="RichTextLabel" parent="map/temp text im lazy" unique_id=850375708]
+[node name="Label" type="RichTextLabel" parent="map" unique_id=850375708]
+z_index = -5
+z_as_relative = false
 texture_filter = 1
 texture_repeat = 1
 offset_left = 103.0
@@ -50,7 +49,9 @@ text = "WASD / arrow keys"
 fit_content = true
 scroll_active = false
 
-[node name="Label5" type="RichTextLabel" parent="map/temp text im lazy" unique_id=303144930]
+[node name="Label5" type="RichTextLabel" parent="map" unique_id=303144930]
+z_index = -5
+z_as_relative = false
 texture_filter = 1
 offset_left = 16.0
 offset_top = 205.0
@@ -64,43 +65,49 @@ text = "jump x2 perhaps?"
 fit_content = true
 scroll_active = false
 
-[node name="Label8" type="RichTextLabel" parent="map/temp text im lazy" unique_id=825813198]
+[node name="Label6" type="RichTextLabel" parent="map" unique_id=1072869420]
+z_index = 2
+z_as_relative = false
 texture_filter = 1
 texture_repeat = 1
-offset_left = 100.0
-offset_top = 219.0
-offset_right = 212.0
-offset_bottom = 242.0
+offset_left = -174.0
+offset_top = 280.0
+offset_right = -62.0
+offset_bottom = 313.0
 theme = ExtResource("2_muem4")
 theme_override_colors/default_color = Color(0.6509804, 0.5294118, 0.70980394, 1)
 theme_override_font_sizes/normal_font_size = 10
 bbcode_enabled = true
-text = "H to interact"
+text = "jump straight up while on a wall to wall jump"
 fit_content = true
 scroll_active = false
 
-[node name="Label6" type="RichTextLabel" parent="map/temp text im lazy" unique_id=1072869420]
+[node name="Label8" type="RichTextLabel" parent="map" unique_id=444275535]
+z_index = 2
+z_as_relative = false
 texture_filter = 1
 texture_repeat = 1
-offset_left = -180.0
-offset_top = 276.0
-offset_right = -68.0
-offset_bottom = 299.0
+offset_left = -132.0
+offset_top = 177.0
+offset_right = -20.0
+offset_bottom = 210.0
 theme = ExtResource("2_muem4")
 theme_override_colors/default_color = Color(0.6509804, 0.5294118, 0.70980394, 1)
 theme_override_font_sizes/normal_font_size = 10
 bbcode_enabled = true
-text = "jump into a wall to wall jump"
+text = "h to interact"
 fit_content = true
 scroll_active = false
 
-[node name="Label7" type="RichTextLabel" parent="map/temp text im lazy" unique_id=1272233665]
+[node name="Label7" type="RichTextLabel" parent="map" unique_id=1272233665]
+z_index = -5
+z_as_relative = false
 texture_filter = 1
 texture_repeat = 1
-offset_left = 120.0
-offset_top = -467.0
-offset_right = 232.0
-offset_bottom = -439.0
+offset_left = 90.0
+offset_top = -484.0
+offset_right = 202.0
+offset_bottom = -456.0
 theme = ExtResource("2_muem4")
 theme_override_colors/default_color = Color(0.6509804, 0.5294118, 0.70980394, 1)
 theme_override_font_sizes/normal_font_size = 10
@@ -108,6 +115,10 @@ bbcode_enabled = true
 text = "shift to dash"
 fit_content = true
 scroll_active = false
+
+[node name="temp text im lazy" type="CanvasLayer" parent="map" unique_id=1945547825]
+visible = false
+follow_viewport_enabled = true
 
 [node name="signs2" type="Node2D" parent="map" unique_id=1964929912]
 
@@ -129,6 +140,7 @@ text_arr = Array[String](["Reaching the light always requires work.", "It is bes
 
 [node name="Player" parent="." unique_id=245072259 instance=ExtResource("1_o5qli")]
 z_index = 5
+z_as_relative = false
 position = Vector2(169, 172)
 jumpBuffering = 0.2
 
@@ -137,8 +149,9 @@ physics_interpolation_mode = 1
 top_level = true
 texture_filter = 1
 position = Vector2(169, 157)
-offset = Vector2(-1.0050799, -0.9667621)
+offset = Vector2(0.1327099, 0.3014494)
 zoom = Vector2(2, 2)
+editor_draw_limits = true
 
 [node name="PhantomCameraHost" type="Node" parent="Player/Camera2D" unique_id=1353048507]
 process_priority = 300
@@ -158,6 +171,7 @@ follow_offset = Vector2(0, -15)
 follow_damping = true
 follow_damping_value = Vector2(0.1, 0.3)
 lookahead_max = true
+draw_limits = true
 noise = SubResource("Resource_tipki")
 metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 
@@ -171,10 +185,13 @@ layer = 2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=898142281]
 stream = ExtResource("16_jbj1t")
+pitch_scale = 0.77
 autoplay = true
+parameters/looping = true
 
 [node name="endscene" type="CanvasLayer" parent="." unique_id=2113526793]
 layer = 5
+visible = false
 script = ExtResource("12_trceg")
 
 [node name="ColorRect" type="ColorRect" parent="endscene" unique_id=2042017846]
