@@ -1,17 +1,22 @@
-## playable [live demo](https://pixelsaver.itch.io/noctivigant)
+## playable [live demo](https://of-knee.itch.io/noctivagant)
+
+
+#### platformer! 
+> wander the night ✦ maybe one day you'll find the foretold exit? chances are, you are simply foolishly attempting to outrun the perennial night
+
+
 
 ### **controls**
-
-**wasd / arrow keys / space** to move around  
-**h** to interact  
-**shift** to dash  
-jump while midair to **double jump**  
-keep jumping against a wall to **wall jump**
+> **wasd / arrow keys / space** to move around  
+> **h** to interact  
+> let go of other keys and press **shift** to dash  
+> jump while midair to **double jump**  
+> jump straight up while sliding down a wall to **wall jump**
 
 ---
 
 ### **Noctivagant** — *adj.*
-
+> [!NOTE]
 > Wandering at night; roaming in the darkness, often used to describe  
 > nocturnal animals, spirits, or people moving under moonlight.  
 > Derived from Latin **noct-** (night) and **vagus** (wandering),  
@@ -21,8 +26,8 @@ keep jumping against a wall to **wall jump**
 
 ---
 
-If dash isn’t working: you're probably holding **w / up arrow / space** while pressing **shift**.  
-you can only hold one at a time ✰
+If dash isn’t working: you're probably holding **w / up arrow / space** or another key while pressing **shift**.  
+You can only hold one at a time ✰
 
 ---
 
@@ -36,4 +41,5 @@ you can only hold one at a time ✰
 ---
 
 | yours truly, **[_ofknee_](https://github.com/ofknee)** & **[_pixelsaver_](https://github.com/pixelsaver)** ✦✦✦ |
-|---|
+|---| 
+✦✦✦ speedran a game tgth for ember!
