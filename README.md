@@ -1,5 +1,11 @@
 ## playable [live demo](https://pixelsaver.itch.io/noctivigant)
 
+
+#### platformer! 
+> wander the night ✦ maybe one day you'll find the foretold exit? chances are, you are simply foolishly attempting to outrun the perennial night
+
+
+
 ### **controls**
 
 **wasd / arrow keys / space** to move around  
@@ -11,7 +17,7 @@ keep jumping against a wall to **wall jump**
 ---
 
 ### **Noctivagant** — *adj.*
-
+> [!NOTE]
 > Wandering at night; roaming in the darkness, often used to describe  
 > nocturnal animals, spirits, or people moving under moonlight.  
 > Derived from Latin **noct-** (night) and **vagus** (wandering),  
